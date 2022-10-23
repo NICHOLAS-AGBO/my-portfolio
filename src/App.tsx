@@ -1,17 +1,19 @@
 import React from 'react';
-// import logo from './logo.svg';
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+// @ts-ignore
+import {Helmet} from "react-helmet";
+
 import AboutMe from "./components/AboutMe";
 import Main from "./components/Main";
 
 function App() {
   return (
       <>
-   <Header/>
+          <Helmet>
+              <meta name={"author"} content={"NICHOLAS AGBO"}/>
+              <title>NICHOLAS AGBO | Web Developer</title>
+          </Helmet>
           <AboutMe/>
           <Main/>
-      <Footer/>
       </>
   );
 }

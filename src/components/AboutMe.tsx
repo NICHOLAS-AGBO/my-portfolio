@@ -1,6 +1,6 @@
-import {Avatar, Button, Container, Grid, Paper, styled, Typography} from "@mui/material";
+import {Avatar, Button, Container, Unstable_Grid2 as Grid, Paper, styled, Typography, Tooltip} from "@mui/material";
 import Nicholas from "../img/pic.png";
-import {useEffect, useMemo, useState} from "react";
+import {ExpandMore} from "@mui/icons-material";
 
 const Section = styled(Paper)(({theme})=>({
     boxShadow: "none",
@@ -15,6 +15,13 @@ const Section = styled(Paper)(({theme})=>({
 }));
 
 export default function AboutMe(){
+    const gotoMain = () => {
+      window.scrollTo({
+          top: document.querySelector("main")?.offsetTop,
+          behavior: "smooth"
+      });
+    };
+
     return(
         <Container sx={{
             minHeight: "600px",
@@ -27,15 +34,16 @@ export default function AboutMe(){
       direction={"column"}
       justifyContent={"center"}
       spacing={2}>
-            <Grid item sx={{textAlign: "center"}}>
-                <Typography variant={"h1"} fontWeight={700} align={"center"}
+
+            <Grid sx={{textAlign: "center"}}>
+                <Typography variant={"h1"} fontWeight={900} align={"center"}
                             sx={{fontSize: {xs: "h4.fontSize", md: "h2.fontSize"}}}>NICHOLAS AGBO</Typography>
                 <Typography variant={"body2"} sx={{color: "gray",}}>
-                    Web developer, UI/UX designer,
-                    Graphics Tutor, Graphics designer
+                    Web Developer, UI/UX designer, Graphics designer/Tutor
                 </Typography>
     </Grid>
-    <Grid item>
+
+    <Grid>
             <Typography variant={"body1"}
                         component={"p"}
                         sx={{textAlign: "center"}}>
@@ -47,16 +55,26 @@ export default function AboutMe(){
     </Grid>
 
 </Grid>
-                <Button variant={"outlined"} sx={{
-                    borderRadius: 8,
-                    color: "common.black",
-                    borderColor: "common.black",
-                    "&:hover":{
-                        borderColor: "common.black",
-                        color: "common.black",
-                        transform: "scale(1.1)"
-                    }
-                }}>Goto main</Button>
+               <Tooltip title={"Goto main section"}>
+                   <Button variant={"outlined"}
+                           onClick={gotoMain}
+                           sx={{
+                               borderRadius: 8,
+                               py: 0.5, px: 3,
+                               color: "common.black",
+                               borderColor: "common.black",
+                               borderWidth: 2,
+                               transition: "all 300ms",
+                               "&:hover":{
+                                   border: "none",
+                                   transform: "scale(1.1)",
+                                   backgroundColor: "common.black",
+                                   color: "common.white"
+                               }
+                           }}>
+                       <ExpandMore fontSize={"large"}/>
+                   </Button>
+               </Tooltip>
             </Section>
         </Container>
 
