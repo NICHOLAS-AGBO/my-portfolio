@@ -1,5 +1,8 @@
 import {Divider, Stack, Typography, Unstable_Grid2 as Grid} from "@mui/material";
 import {blue, brown, cyan, green, orange, pink, purple, red, yellow} from "@mui/material/colors";
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
+import {useEffect} from "react";
 //DEVELOPER
 import NextJs from "../img/skills/800px-Nextjs-logo.svg.png"
 import ReactJs from "../logo.svg"
@@ -26,7 +29,36 @@ import Corel from "../img/skills/CorelDraw_logo.svg.png"
 import Figma from "../img/skills/figma_logo.png"
 import XD from "../img/skills/Adobe_XD_CC_icon.svg.png"
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Skills(){
+
+    useEffect(()=>{
+
+        const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#trigger",
+            start: "top top",
+        }
+    });
+        const media = gsap.matchMedia();
+
+media.add("(max-width: 799px)", ()=>{
+            tl.to(".skills",
+                {
+                    filter: "grayscale(0%)",
+                    autoAlpha: 1,
+                    scale: 1.05,
+                    stagger: 0.3,
+                    onComplete: ()=> {
+                        tl.remove(tl)
+                    },
+                    ease: "power3"
+                })
+});
+
+    });
+
     return(
         <Grid container
               direction={"column"}
@@ -34,7 +66,7 @@ export default function Skills(){
               alignItems={"center"}
               rowSpacing={4}
         >
-            <Grid sx={{textAlign: "center"}}>
+            <Grid id={"trigger"} sx={{textAlign: "center"}}>
                 <Typography variant={"h1"} fontWeight={900} align={"center"}
                             sx={{fontSize: {xs: "h4.fontSize", md: "h2.fontSize"}}}>Skills</Typography>
                 <Typography color={"gray"}>This section is about my skills and Knowledge</Typography>
@@ -43,14 +75,14 @@ export default function Skills(){
             <Grid>
 
                 {/*SECTION DEVELOPER*/}
-                    <Typography color={"gray"} align={"center"} variant={"subtitle1"}>AS A DEVELOPER</Typography>
+                    <Typography color={"gray"} align={"center"} variant={"subtitle1"}>DEVELOPER SKILLS</Typography>
 
                 <Grid container
                       justifyContent={"center"}
                       alignItems={"center"}
                       spacing={4}
                 >
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -65,7 +97,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -84,7 +116,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -99,7 +131,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -118,7 +150,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -136,7 +168,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -154,7 +186,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -171,7 +203,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -186,7 +218,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -203,7 +235,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -220,7 +252,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -238,7 +270,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -256,7 +288,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -270,7 +302,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -288,7 +320,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -302,7 +334,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -320,7 +352,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -362,14 +394,14 @@ export default function Skills(){
             <Grid>
 
                 {/*SECTION DEVELOPER*/}
-                <Typography color={"gray"} align={"center"} variant={"subtitle1"}>AS A DESIGNER</Typography>
+                <Typography color={"gray"} align={"center"} variant={"subtitle1"}>DESIGNER SKILLS</Typography>
 
                 <Grid container
                       justifyContent={"center"}
                       alignItems={"center"}
                       spacing={4}
                 >
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -388,7 +420,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -407,7 +439,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -426,7 +458,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -441,7 +473,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",
@@ -456,7 +488,7 @@ export default function Skills(){
                         </Stack>
                     </Grid>
 
-                    <Grid xs={4} md={3} lg={2} sx={{
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
                         p: 2,
                         filter: "grayscale(90%)",
                         cursor: "default",

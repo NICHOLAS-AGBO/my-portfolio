@@ -9,7 +9,7 @@ export default function Works(){
               rowSpacing={4}
         >
             <Grid sx={{textAlign: "center"}}>
-                <Typography variant={"h4"} fontWeight={700} sx={{fontSize: {xs: "h5.fontSize, md:h4.fontSize"}}}>
+                <Typography variant={"h4"} fontWeight={700} sx={{fontSize: {xs: "h5.fontSize, md:h4."}}}>
                     My work
                 </Typography>
                 <Typography color={"gray"}>This section is about my work</Typography>

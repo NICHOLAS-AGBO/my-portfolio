@@ -12,6 +12,7 @@ specifiers:
   '@types/node': ^17.0.45
   '@types/react': ^18.0.21
   '@types/react-dom': ^18.0.6
+  gsap: file:gsap.tgz
   react: ^18.2.0
   react-dom: ^18.2.0
   react-helmet: ^6.1.0
@@ -45,6 +46,7 @@ dependencies:
   '@types/node': 17.0.45
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
+  gsap: file:gsap.tgz
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-helmet: 6.1.0_react@18.2.0
@@ -10417,4 +10419,10 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: false
+
+  file:gsap.tgz:
+    resolution: {integrity: sha512-7kzs7cFarvY2JdzAukcknTyTLqWvct3+20dUktV4anLszRUA/J22nFWtRSt8cIh14qAfPI1VoWXIiLgjUSttkA==, tarball: file:gsap.tgz}
+    name: gsap
+    version: 3.11.1
     dev: false

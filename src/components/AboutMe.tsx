@@ -59,8 +59,7 @@ export default function AboutMe(){
                    <Button variant={"outlined"}
                            onClick={gotoMain}
                            sx={{
-                               borderRadius: 8,
-                               py: 0.5, px: 3,
+                               borderRadius: 8, px: 3,
                                color: "common.black",
                                borderColor: "common.black",
                                borderWidth: 2,
