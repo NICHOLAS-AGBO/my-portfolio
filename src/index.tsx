@@ -6,15 +6,24 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import {BrowserRouter as Router, Routes, Route, Outlet} from "react-router-dom";
+import About from "./routes/about";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-      <Header/>
-      <App />
-      <Footer/>
+      <Router>
+          <Header/>
+          <Routes>
+              <Route path={"/"} element={<App/>}/>
+              <Route path={"home"} element={<App/>}/>
+              <Route path={"about-me"} element={<About/>}/>
+          </Routes>
+          <Outlet/>
+          <Footer/>
+      </Router>
   </React.StrictMode>
 );
 
