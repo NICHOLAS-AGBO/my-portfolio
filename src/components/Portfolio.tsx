@@ -140,7 +140,7 @@ export default function Portfolio(){
                                        height: "100%",
                                        transition: "background-color 500ms",
                                    }}>
-                                <Typography variant={"h6"} fontWeight={200}>UI/UX project</Typography>
+                                <Typography variant={"h6"} fontWeight={200}>Graphics project</Typography>
                                 <Link href={"#"} underline={"none"} sx={{
                                     color: "white",
                                     px: 3,
@@ -193,7 +193,7 @@ export default function Portfolio(){
                                        height: "100%",
                                        transition: "background-color 500ms",
                                    }}>
-                                <Typography variant={"h6"} fontWeight={200}>Graphics project</Typography>
+                                <Typography variant={"h6"} fontWeight={200}>UI/UX project</Typography>
                                 <Link href={"#"} underline={"none"} sx={{
                                     color: "white",
                                     px: 3,

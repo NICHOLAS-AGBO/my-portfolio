@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import {BrowserRouter as Router, Routes, Route, Outlet} from "react-router-dom";
 import About from "./routes/about";
+import Notfound from "./routes/404";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -20,6 +21,7 @@ root.render(
               <Route path={"/"} element={<App/>}/>
               <Route path={"home"} element={<App/>}/>
               <Route path={"about-me"} element={<About/>}/>
+              <Route path={"*"} element={<Notfound/>}/>
           </Routes>
           <Outlet/>
           <Footer/>

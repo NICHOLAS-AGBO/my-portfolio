@@ -7,7 +7,7 @@ import {
     Divider,
     Zoom,
     Tooltip,
-    Fab
+    Fab, Link
 } from "@mui/material";
 import {ExpandLess, Facebook, GitHub, LinkedIn, Pinterest, Twitter} from "@mui/icons-material";
 import {useEffect, useState} from "react";
@@ -57,11 +57,11 @@ export default function Footer(){
     </Grid>
     <Grid>
         <Grid container wrap={"nowrap"}>
-            <Grid><IconButton sx={{color: "inherit"}}><GitHub/></IconButton></Grid>
-            <Grid><IconButton sx={{color: "inherit"}}><LinkedIn/></IconButton></Grid>
-            <Grid><IconButton sx={{color: "inherit"}}><Twitter/></IconButton></Grid>
-            <Grid><IconButton sx={{color: "inherit"}}><Facebook/></IconButton></Grid>
-            <Grid><IconButton sx={{color: "inherit"}}><Pinterest/></IconButton></Grid>
+            <Grid><IconButton><Link href={"#"} underline={"none"} sx={{color: "common.white"}}><GitHub/></Link></IconButton></Grid>
+            <Grid><IconButton><Link href={"#"} underline={"none"} sx={{color: "common.white"}}><LinkedIn/></Link></IconButton></Grid>
+            <Grid><IconButton><Link href={"#"} underline={"none"} sx={{color: "common.white"}}><Twitter/></Link></IconButton></Grid>
+            <Grid><IconButton><Link href={"#"} underline={"none"} sx={{color: "common.white"}}><Facebook/></Link></IconButton></Grid>
+            <Grid><IconButton><Link href={"#"} underline={"none"} sx={{color: "common.white"}}><Pinterest/></Link></IconButton></Grid>
         </Grid>
     </Grid>
     <Grid>
@@ -92,13 +92,16 @@ export default function Footer(){
                         position: "fixed",
                         zIndex: 1000,
                         bottom: {xs: 105, sm: 100},
-                        backgroundColor: "common.white",
-                        color: "common.black",
+                        backgroundColor: "common.black",
+                        color: "common.white",
                         right: 20, p: 0.1,
+                        borderColor: "common.white",
+                        borderWidth: 2,
+                        borderStyle: "solid",
                         "&:hover":{
                             backgroundColor: "common.white",
                             color: "common.black",
-                            border: 'none'
+                            borderColor: "common.black",
                         }
                     }]} onClick={scrollUp} color="secondary" aria-label="top">
                         <ExpandLess fontSize={"large"}/>

@@ -18,6 +18,7 @@ specifiers:
   react-helmet: ^6.1.0
   react-router-dom: ^6.4.2
   react-scripts: 5.0.1
+  three: ^0.145.0
   ts-node: ^10.9.1
   typescript: ^4.8.4
   web-vitals: ^2.1.4
@@ -52,6 +53,7 @@ dependencies:
   react-helmet: 6.1.0_react@18.2.0
   react-router-dom: 6.4.2_biqbaboplfbrettd7655fr4n2y
   react-scripts: 5.0.1_tg35rg5bw5g7dmcyz7ysfys5si
+  three: 0.145.0
   ts-node: 10.9.1_ksn4eycaeggbrckn3ykh37hwf4
   typescript: 4.8.4
   web-vitals: 2.1.4
@@ -9595,6 +9597,10 @@ packages:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: false
 
+  /three/0.145.0:
+    resolution: {integrity: sha512-EKoHQEtEJ4CB6b2BGMBgLZrfwLjXcSUfoI/MiIXUuRpeYsfK5aPWbYhdtIVWOH+x6X0TouldHKHBuc/LAiFzAw==}
+    dev: false
+
   /throat/6.0.1:
     resolution: {integrity: sha512-8hmiGIJMDlwjg7dlJ4yKGLK8EsYqKgPWbG3b4wjJddKNwc7N7Dpn08Df4szr/sZdMVeOstrdYSsqzX6BYbcB+w==}
     dev: false
@@ -10422,7 +10428,7 @@ packages:
     dev: false
 
   file:gsap.tgz:
-    resolution: {integrity: sha512-7kzs7cFarvY2JdzAukcknTyTLqWvct3+20dUktV4anLszRUA/J22nFWtRSt8cIh14qAfPI1VoWXIiLgjUSttkA==, tarball: file:gsap.tgz}
+    resolution: {integrity: sha512-FhaMh9UmPu3VKbnZE1Pqg6Ryc+z1GdHeB8KWljp4JbSwPOeQUjgsqSb7twQlJmNPnt8KF6v8iNz0xvNOJ/xsrw==, tarball: file:gsap.tgz}
     name: gsap
-    version: 3.11.1
+    version: 3.11.3
     dev: false
