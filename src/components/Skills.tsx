@@ -68,7 +68,7 @@ media.add("(max-width: 799px)", ()=>{
         >
             <Grid id={"trigger"} sx={{textAlign: "center"}}>
                 <Typography variant={"h1"} fontWeight={900} align={"center"}
-                            sx={{fontSize: {xs: "h4.fontSize", md: "h2.fontSize"}}}>Skills</Typography>
+                            sx={{color: "primary.main", fontSize: {xs: "h4.fontSize", md: "h2.fontSize"}}}>Skills</Typography>
                 <Typography color={"gray"}>This section is about my skills and Knowledge</Typography>
             </Grid>
 
@@ -112,7 +112,7 @@ media.add("(max-width: 799px)", ()=>{
                     }}>
                         <Stack direction={"column"} alignItems={"center"} spacing={1}>
                         <img width={100} src={ReactJs} alt={"react js logo"}/>
-                        <Typography>React Js</Typography>
+                        <Typography sx={{color: "primary.main"}}>React Js</Typography>
                         </Stack>
                     </Grid>
 
@@ -146,7 +146,7 @@ media.add("(max-width: 799px)", ()=>{
                     }}>
                         <Stack direction={"column"} alignItems={"center"} spacing={1}>
                         <img width={80} src={Js} alt={"next js logo"}/>
-                        <Typography>JavaScript</Typography>
+                        <Typography sx={{color: "primary.main"}}>JavaScript</Typography>
                         </Stack>
                     </Grid>
 
@@ -164,7 +164,7 @@ media.add("(max-width: 799px)", ()=>{
                         }}}>
                         <Stack direction={"column"} alignItems={"center"} spacing={1}>
                             <img width={100} src={Html} alt={"html logo"}/>
-                            <Typography>HTML</Typography>
+                            <Typography sx={{color: "primary.main"}}>HTML</Typography>
                         </Stack>
                     </Grid>
 
@@ -182,7 +182,7 @@ media.add("(max-width: 799px)", ()=>{
                         }}}>
                         <Stack direction={"column"} alignItems={"center"} spacing={1}>
                             <img width={70} src={CSS} alt={"css logo"}/>
-                            <Typography>CSS</Typography>
+                            <Typography sx={{color: "primary.main"}}>CSS</Typography>
                         </Stack>
                     </Grid>
 
@@ -214,7 +214,7 @@ media.add("(max-width: 799px)", ()=>{
                         }}}>
                         <Stack direction={"column"} alignItems={"center"} spacing={1}>
                             <img src={ExpressJs} alt={"express js logo"}/>
-                            <Typography>Express Js</Typography>
+                            <Typography sx={{color: "primary.main"}}>Express Js</Typography>
                         </Stack>
                     </Grid>
 
@@ -266,7 +266,7 @@ media.add("(max-width: 799px)", ()=>{
                         }}}>
                         <Stack direction={"column"} alignItems={"center"} spacing={1}>
                             <img width={100} src={NodeJs} alt={"node js logo"}/>
-                            <Typography>Node Js</Typography>
+                            <Typography sx={{color: "primary.main"}}>Node Js</Typography>
                         </Stack>
                     </Grid>
 
@@ -284,7 +284,7 @@ media.add("(max-width: 799px)", ()=>{
                         }}}>
                         <Stack direction={"column"} alignItems={"center"} spacing={1}>
                             <img width={100} src={Angular} alt={"angular logo"}/>
-                            <Typography>Angular</Typography>
+                            <Typography sx={{color: "primary.main"}}>Angular</Typography>
                         </Stack>
                     </Grid>
 
@@ -316,7 +316,7 @@ media.add("(max-width: 799px)", ()=>{
                         }}}>
                         <Stack direction={"column"} alignItems={"center"} spacing={1}>
                             <img width={100} src={BootStrap} alt={"bootstrap logo"}/>
-                            <Typography>BootStrap</Typography>
+                            <Typography sx={{color: "primary.main"}}>BootStrap</Typography>
                         </Stack>
                     </Grid>
 
@@ -348,7 +348,7 @@ media.add("(max-width: 799px)", ()=>{
                         }}}>
                         <Stack direction={"column"} alignItems={"center"} spacing={1}>
                             <img width={80} src={Laravel} alt={"laravel logo"}/>
-                            <Typography>Laravel</Typography>
+                            <Typography sx={{color: "primary.main"}}>Laravel</Typography>
                         </Stack>
                     </Grid>
 
@@ -369,10 +369,10 @@ media.add("(max-width: 799px)", ()=>{
                         cursor: "default",
                         transition: "all 300ms",
                         borderRadius: "50%",
-                        borderColor: "common.black",
+                        borderColor: "primary.main",
                         borderWidth: 2,
                         borderStyle: "solid",
-                        color: "common.black",
+                        color: "primary.main",
                         "&:hover":{
                             transform: "scale(0.9)",
                         }}}>
@@ -416,7 +416,7 @@ media.add("(max-width: 799px)", ()=>{
                     }}>
                         <Stack direction={"column"} alignItems={"center"} spacing={1}>
                             <img width={80} src={PSD} alt={"Adobe_Photoshop_CC_icon logo"}/>
-                            <Typography>Photoshop</Typography>
+                            <Typography sx={{color: "primary.main"}}>Photoshop</Typography>
                         </Stack>
                     </Grid>
 
@@ -435,7 +435,7 @@ media.add("(max-width: 799px)", ()=>{
                     }}>
                         <Stack direction={"column"} alignItems={"center"} spacing={1}>
                             <img width={80} src={AI} alt={"Adobe_Illustrator_CC_icon logo"}/>
-                            <Typography>Illustrator</Typography>
+                            <Typography sx={{color: "primary.main"}}>Illustrator</Typography>
                         </Stack>
                     </Grid>
 
@@ -454,7 +454,7 @@ media.add("(max-width: 799px)", ()=>{
                     }}>
                         <Stack direction={"column"} alignItems={"center"} spacing={1}>
                             <img width={80} src={IND} alt={"Adobe_InDesign_CC_icon logo"}/>
-                            <Typography>Indesign</Typography>
+                            <Typography sx={{color: "primary.main"}}>Indesign</Typography>
                         </Stack>
                     </Grid>
 
@@ -503,7 +503,7 @@ media.add("(max-width: 799px)", ()=>{
                     }}>
                         <Stack direction={"column"} alignItems={"center"} spacing={1}>
                             <img width={80} src={XD} alt={"Adobe_XD_CC_icon logo"}/>
-                            <Typography>Adobe XD</Typography>
+                            <Typography sx={{color: "primary.main"}}>Adobe XD</Typography>
                         </Stack>
                     </Grid>
 
@@ -512,10 +512,10 @@ media.add("(max-width: 799px)", ()=>{
                         cursor: "default",
                         transition: "all 300ms",
                         borderRadius: "50%",
-                        borderColor: "common.black",
+                        borderColor: "primary.main",
                         borderWidth: 2,
                         borderStyle: "solid",
-                        color: "common.black",
+                        color: "primary.main",
                         "&:hover":{
                             transform: "scale(0.9)",
                         }}}>

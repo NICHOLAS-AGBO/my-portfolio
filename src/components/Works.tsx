@@ -9,7 +9,7 @@ export default function Works(){
               rowSpacing={4}
         >
             <Grid sx={{textAlign: "center"}}>
-                <Typography variant={"h4"} fontWeight={700} sx={{fontSize: {xs: "h5.fontSize, md:h4."}}}>
+                <Typography variant={"h4"} fontWeight={700} sx={{color: "primary.main",fontSize: {xs: "h5.fontSize, md:h4.fontSize"}}}>
                     My work
                 </Typography>
                 <Typography color={"gray"}>This section is about my work</Typography>
@@ -31,7 +31,7 @@ export default function Works(){
                        <Typography fontWeight={300}>Web Developer</Typography>
                    </Grid>
                    <Grid xs={12} md={9} sx={{px: 2}}>
-                       <Typography component={"p"}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a interdum nibh. Vivamus non urna condimentum, pulvinar erat ut, mattis dui.
+                       <Typography component={"p"} sx={{color: "primary.main"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a interdum nibh. Vivamus non urna condimentum, pulvinar erat ut, mattis dui.
                            Vestibulum eu tellus eu odio posuere efficitur.</Typography>
                    </Grid>
 <Divider sx={{width: "100%"}}/>
@@ -48,7 +48,7 @@ export default function Works(){
                        <Typography fontWeight={300}>UI/UX Designer</Typography>
                    </Grid>
                    <Grid xs={12} md={9} sx={{px: 2}}>
-                       <Typography component={"p"}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a interdum nibh. Vivamus non urna condimentum, pulvinar erat ut, mattis dui.
+                       <Typography component={"p"} sx={{color: "primary.main"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a interdum nibh. Vivamus non urna condimentum, pulvinar erat ut, mattis dui.
                            Vestibulum eu tellus eu odio posuere efficitur.</Typography>
                    </Grid>
                    <Divider sx={{width: "100%"}}/>
@@ -66,7 +66,7 @@ export default function Works(){
                        <Typography fontWeight={300}>Graphics Designer/Tutor</Typography>
                    </Grid>
                    <Grid xs={12} md={9} sx={{px: 2}}>
-                       <Typography component={"p"}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a interdum nibh. Vivamus non urna condimentum, pulvinar erat ut, mattis dui.
+                       <Typography component={"p"} sx={{color: "primary.main"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a interdum nibh. Vivamus non urna condimentum, pulvinar erat ut, mattis dui.
                            Vestibulum eu tellus eu odio posuere efficitur.</Typography>
                    </Grid>
                    <Divider sx={{width: "100%"}}/>

@@ -1,8 +1,18 @@
-import {Avatar, Button, Container, Unstable_Grid2 as Grid, Paper, styled, Typography, Tooltip} from "@mui/material";
+import {
+    Avatar,
+    Button,
+    Container,
+    Unstable_Grid2 as Grid,
+    Paper,
+    styled,
+    Typography,
+    Tooltip,
+    Box
+} from "@mui/material";
 import Nicholas from "../img/pic.png";
 import {ExpandMore} from "@mui/icons-material";
 
-const Section = styled(Paper)(({theme})=>({
+const Section = styled(Box)(({theme})=>({
     boxShadow: "none",
     borderRadius: 0,
     display: "flex",
@@ -60,15 +70,15 @@ export default function AboutMe(){
                            onClick={gotoMain}
                            sx={{
                                borderRadius: 8, px: 3,
-                               color: "common.black",
-                               borderColor: "common.black",
+                               color: "primary.main",
+                               borderColor: "primary.main",
                                borderWidth: 2,
                                transition: "all 300ms",
                                "&:hover":{
                                    border: "none",
                                    transform: "scale(1.1)",
-                                   backgroundColor: "common.black",
-                                   color: "common.white"
+                                   backgroundColor: "primary.main",
+                                   color: "secondary.main"
                                }
                            }}>
                        <ExpandMore fontSize={"large"}/>

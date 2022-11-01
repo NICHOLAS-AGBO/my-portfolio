@@ -17,7 +17,7 @@ export default function About(){
                     mx: "auto",
                     width: {xs: 150, md: 200},
                     height: {xs: 150, md: 200},
-                    outlineColor: "common.black",
+                    outlineColor: "primary.main",
                     outlineWidth: 2,
                     outlineStyle: "dotted",
                     outlineOffset: 5,

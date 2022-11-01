@@ -39,10 +39,12 @@ export default function Footer(){
     return(
         <>
         <Container maxWidth={false}
-                   component={"footer"} sx={{
-            backgroundColor: "common.black",
+                   component={"footer"}
+                   sx={{
+            backgroundColor: "rgb(16,16,16)",
             color: "common.white",
-            py: 4
+            py: 4,
+           borderTop: "1px solid rgba(255, 255, 255, 0.12)",
         }}>
 
 <Grid container
@@ -55,13 +57,13 @@ export default function Footer(){
     <Grid>
         <Typography variant={"h6"} align={"center"}>  Social links  </Typography>
     </Grid>
-    <Grid>
+    <Grid sx={{px: 1}}>
         <Grid container wrap={"nowrap"}>
-            <Grid><IconButton><Link href={"#"} underline={"none"} sx={{color: "common.white"}}><GitHub/></Link></IconButton></Grid>
-            <Grid><IconButton><Link href={"#"} underline={"none"} sx={{color: "common.white"}}><LinkedIn/></Link></IconButton></Grid>
-            <Grid><IconButton><Link href={"#"} underline={"none"} sx={{color: "common.white"}}><Twitter/></Link></IconButton></Grid>
-            <Grid><IconButton><Link href={"#"} underline={"none"} sx={{color: "common.white"}}><Facebook/></Link></IconButton></Grid>
-            <Grid><IconButton><Link href={"#"} underline={"none"} sx={{color: "common.white"}}><Pinterest/></Link></IconButton></Grid>
+            <Grid><Link href={"#"} underline={"none"}><IconButton sx={{color: "common.white"}}><GitHub/></IconButton></Link></Grid>
+            <Grid><Link href={"#"} underline={"none"}><IconButton sx={{color: "common.white"}}><LinkedIn/></IconButton></Link></Grid>
+            <Grid><Link href={"#"} underline={"none"}><IconButton sx={{color: "common.white"}}><Twitter/></IconButton></Link></Grid>
+            <Grid><Link href={"#"} underline={"none"}><IconButton sx={{color: "common.white"}}><Facebook/></IconButton></Link></Grid>
+            <Grid><Link href={"#"} underline={"none"}><IconButton sx={{color: "common.white"}}><Pinterest/></IconButton></Link></Grid>
         </Grid>
     </Grid>
     <Grid>

@@ -9,10 +9,10 @@ export default function Notfound(){
               alignItems={"center"}
               direction={"column"}
         >
-            <Typography variant={"h1"} fontWeight={900}>
+            <Typography sx={{color: "primary.main"}} variant={"h1"} fontWeight={900}>
                 404
             </Typography>
-            <Typography>NOT FOUND</Typography>
+            <Typography sx={{color: "primary.main"}}>NOT FOUND</Typography>
         </Grid>
 
     );

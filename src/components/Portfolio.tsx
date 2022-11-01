@@ -46,7 +46,7 @@ export default function Portfolio(){
         >
             <Grid id={"portfolio"} sx={{textAlign: "center"}}>
                 <Typography variant={"h1"} fontWeight={900} align={"center"}
-                            sx={{fontSize: {xs: "h4.fontSize", md: "h2.fontSize"}}}>Portfolio</Typography>
+                            sx={{color: "primary.main", fontSize: {xs: "h4.fontSize", md: "h2.fontSize"}}}>Portfolio</Typography>
                 <Typography color={"gray"}>This section is about my projects</Typography>
             </Grid>
 
@@ -81,7 +81,7 @@ export default function Portfolio(){
                                        position: "absolute",
                                        display: {md:"none"},
                                        backgroundColor: "rgba(0,0,0,.35)",
-                                       color: "common.white",
+                                       color: "#fff",
                                        zIndex: 2,
                                        width: "100%",
                                        height: "100%",
@@ -89,15 +89,15 @@ export default function Portfolio(){
                                    }}>
                                 <Typography variant={"h6"} fontWeight={200}>Web project</Typography>
                                 <Link href={"#"} underline={"none"} sx={{
-                                    color: "white",
+                                    color: "#fff",
                                     px: 3,
                                     py: 1.5,
-                                    border: "solid 2px white",
+                                    border: "solid 2px #fff",
                                     fontFamily: "inherit",
                                     transition: "all 300ms",
                                     "&:hover":{
                                         color: "black",
-                                        backgroundColor: "white",
+                                        backgroundColor: "#fff",
                                         border: "none",
                                     }
                                 }}>
@@ -134,7 +134,7 @@ export default function Portfolio(){
                                        position: "absolute",
                                        display: {md:"none"},
                                        backgroundColor: "rgba(0,0,0,.35)",
-                                       color: "common.white",
+                                       color: "#fff",
                                        zIndex: 2,
                                        width: "100%",
                                        height: "100%",
@@ -142,15 +142,15 @@ export default function Portfolio(){
                                    }}>
                                 <Typography variant={"h6"} fontWeight={200}>Graphics project</Typography>
                                 <Link href={"#"} underline={"none"} sx={{
-                                    color: "white",
+                                    color: "#fff",
                                     px: 3,
                                     py: 1.5,
-                                    border: "solid 2px white",
+                                    border: "solid 2px #fff",
                                     fontFamily: "inherit",
                                     transition: "all 300ms",
                                     "&:hover":{
                                         color: "black",
-                                        backgroundColor: "white",
+                                        backgroundColor: "#fff",
                                         border: "none",
                                     }
                                 }}>
@@ -187,7 +187,7 @@ export default function Portfolio(){
                                        position: "absolute",
                                        display: {md:"none"},
                                        backgroundColor: "rgba(0,0,0,.35)",
-                                       color: "common.white",
+                                       color: "#fff",
                                        zIndex: 2,
                                        width: "100%",
                                        height: "100%",
@@ -195,15 +195,15 @@ export default function Portfolio(){
                                    }}>
                                 <Typography variant={"h6"} fontWeight={200}>UI/UX project</Typography>
                                 <Link href={"#"} underline={"none"} sx={{
-                                    color: "white",
+                                    color: "#fff",
                                     px: 3,
                                     py: 1.5,
-                                    border: "solid 2px white",
+                                    border: "solid 2px #fff",
                                     fontFamily: "inherit",
                                     transition: "all 300ms",
                                     "&:hover":{
                                         color: "black",
-                                        backgroundColor: "white",
+                                        backgroundColor: "#fff",
                                         border: "none",
                                     }
                                 }}>

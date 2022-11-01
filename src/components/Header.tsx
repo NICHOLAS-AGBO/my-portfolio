@@ -1,5 +1,5 @@
 import {AppBar, Box, Collapse, IconButton, styled, Toolbar, Tooltip, Unstable_Grid2 as Grid} from "@mui/material";
-import {GitHub, Menu} from "@mui/icons-material";
+import {DarkMode, GitHub, Menu} from "@mui/icons-material";
 import {NavLink} from "react-router-dom";
 import {useCallback, useEffect, useState} from "react";
 import gsap from "gsap";
@@ -9,18 +9,44 @@ gsap.registerPlugin(MorphSVGPlugin);
 
 const Item = styled(NavLink)(({theme})=>({
     ...theme.typography.body2,
-    color: theme.palette.common.black,
+    color: theme.palette.primary.main,
     padding: theme.spacing(2),
     textDecoration: "none",
-    cursor: "default",
+    cursor: "pointer",
     "&:hover":{
         backgroundColor:theme.palette.action.hover,
     }
 }));
+
 const links = ['Home','About me',"Portfolio", "Contact","More"];
 
 export default function Header(){
     const [menu, setMenu] = useState(false);
+
+    const NavBar = styled(AppBar)(({theme})=>({
+        backgroundColor: theme.palette.mode === "dark" ?
+        "rgba(16,16,16,0.8)" :
+            menu?"rgba(255,255,255,0.90)":"rgba(255,255,255,0.25)"
+        ,
+        backdropFilter: "blur(8px)"
+    }));
+
+    const Flex = styled(Grid)(({theme})=>({
+        py: theme.spacing(3),
+        position: "absolute",
+        textAlign: "center",
+        zIndex: 2,
+        backgroundColor: theme.palette.mode === "dark" ?
+            "rgba(16,16,16,0.8)" :
+            menu?"rgba(255,255,255,0.90)":"rgba(255,255,255,0.25)"
+        ,
+        backdropFilter: "blur(8px)",
+        width: "inherit",
+        borderBottomColor: "primary.main",
+        borderBottomStyle: "solid",
+        borderBottomWidth: 1,
+
+    }))
 
     //animation for menu button
     const animateMenuButton = (x:boolean) => {
@@ -39,23 +65,19 @@ export default function Header(){
     });
 
     return(
-        <AppBar variant={"outlined"}
+        <NavBar variant={"outlined"}
                 position={"sticky"}
-                elevation={0}
-                sx={{
-                    backgroundColor: menu?"rgba(255,255,255,0.90)":"rgba(255,255,255,0.25)",
-                    backdropFilter: "blur(8px)"
-        }}>
+                elevation={0}>
             <Toolbar sx={{justifyContent: {xs: "space-between", sm: "start"}}}>
                     <IconButton id={"menu_btn"} sx={{
-                        order: 2,
+                        order: 1,
                         display: {sm: "none"},
                     }} onClick={()=>setMenu(!menu)}>
                         <Tooltip title={(menu)?"close menu":"open menu"}>
                         <Menu id={"menu_svg"}/>
                         </Tooltip>
                     </IconButton>
-                <IconButton>
+                <IconButton sx={{order: {xs: 2, sm: 0}}}>
                     <NavLink to={"/"}>
                         <GitHub/>
                     </NavLink>
@@ -77,30 +99,24 @@ export default function Header(){
                         }
                     </Grid>
                 </Box>
+                <IconButton id={"theme_btn"} sx={{order: {xs: 3, sm: 0}}}>
+                    <Tooltip title={"Change theme"}>
+                    <DarkMode id={"theme_icon"}/>
+                    </Tooltip>
+                </IconButton>
             </Toolbar>
 
             {/*FOR SMALL SCREEN*/}
             <Collapse in={menu}
                       timeout={"auto"}
-                      component={"nav"} sx={{
+                      component={"nav"}
+                      sx={{
                 display: {sm: "none"},
                 width: "100%",
             }}>
-                <Grid container
+                <Flex container
                       spacing={1}
-                      direction={"column"}
-                      sx={{
-                          py: 3,
-                          position: "absolute",
-                          textAlign: "center",
-                          zIndex: 2,
-                          backgroundColor: "rgba(255,255,255,0.9)",
-                          backdropFilter: "blur(8px)",
-                          width: "inherit",
-                          borderBottomColor: "common.black",
-                          borderBottomStyle: "solid",
-                          borderBottomWidth: 2,
-                }}>
+                      direction={"column"}>
                     {
                         links.map((link,i)=>(
                             <Item onClick={()=>setMenu(false)} style={({isActive})=>{
@@ -110,9 +126,9 @@ export default function Header(){
                                   key={i}>{link}</Item>
                         ))
                     }
-                </Grid>
+                </Flex>
             </Collapse>
-        </AppBar>
+        </NavBar>
     );
 
 }

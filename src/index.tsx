@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import {BrowserRouter as Router, Routes, Route, Outlet} from "react-router-dom";
 import About from "./routes/about";
 import Notfound from "./routes/404";
+import UI from "./components/UI";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -16,6 +17,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
       <Router>
+          <UI>
           <Header/>
           <Routes>
               <Route path={"/"} element={<App/>}/>
@@ -25,6 +27,7 @@ root.render(
           </Routes>
           <Outlet/>
           <Footer/>
+          </UI>
       </Router>
   </React.StrictMode>
 );
