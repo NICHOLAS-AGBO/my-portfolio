@@ -12,7 +12,7 @@ function PortfolioContents(){
                   direction={"column"}
                   justifyContent={"center"}
             >
-
+                {/*section web*/}
                 <Grid xs={12}>
                     <React.Suspense fallback={<Loading/>}>
                         <Portfolio/>

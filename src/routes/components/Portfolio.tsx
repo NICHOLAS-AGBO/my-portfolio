@@ -47,7 +47,6 @@ export default function Portfolio(){
             }}>
                 Web projects
             </Typography>
-
             <Grid
                 container
                 justifyContent={"center"}
@@ -65,16 +64,18 @@ export default function Portfolio(){
                         boxShadow: 3,
                         bgColor: "common.white",
                     }}>
-                        <ScaleButton>
+                        <ScaleButton size={"small"}>
                             <OpenInFull/>
                         </ScaleButton>
-
                     <img src={web1} alt={"web project 1"} width={"100%"}/>
                     <HiddenDrawer href={"#"} variant={"subtitle1"} color={"inherit"} title={"view this project"}>
                             https://myproject.com/
                     </HiddenDrawer>
                     </Box>
                 </Grid>
+
+
+
             </Grid>
         </Container>
     );
