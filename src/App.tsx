@@ -1,10 +1,11 @@
 import React from 'react';
 // @ts-ignore
 import {Helmet} from "react-helmet";
+import Loading from "./components/FullLoading";
 
-import AboutMe from "./components/AboutMe";
-import Main from "./components/Main";
 
+const AboutMe = React.lazy(()=>import("./components/AboutMe"));
+const Main = React.lazy(()=>import("./components/Main"));
 function App() {
   return (
       <>
@@ -12,8 +13,11 @@ function App() {
               <meta name={"author"} content={"NICHOLAS AGBO"}/>
               <title>NICHOLAS AGBO | Web Developer</title>
           </Helmet>
-          <AboutMe/>
-          <Main/>
+          <React.Suspense fallback={<Loading/>}>
+              <AboutMe/>
+              <Main/>
+          </React.Suspense>
+
       </>
   );
 }

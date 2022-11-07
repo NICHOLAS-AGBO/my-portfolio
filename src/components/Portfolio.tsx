@@ -88,7 +88,7 @@ export default function Portfolio(){
                                        transition: "background-color 500ms",
                                    }}>
                                 <Typography variant={"h6"} fontWeight={200}>Web project</Typography>
-                                <Link href={"#"} underline={"none"} sx={{
+                                <Link href={"/portfolio#web"} underline={"none"} sx={{
                                     color: "#fff",
                                     px: 3,
                                     py: 1.5,
@@ -141,7 +141,7 @@ export default function Portfolio(){
                                        transition: "background-color 500ms",
                                    }}>
                                 <Typography variant={"h6"} fontWeight={200}>Graphics project</Typography>
-                                <Link href={"#"} underline={"none"} sx={{
+                                <Link href={"/portfolio#graphics"} underline={"none"} sx={{
                                     color: "#fff",
                                     px: 3,
                                     py: 1.5,
@@ -194,7 +194,7 @@ export default function Portfolio(){
                                        transition: "background-color 500ms",
                                    }}>
                                 <Typography variant={"h6"} fontWeight={200}>UI/UX project</Typography>
-                                <Link href={"#"} underline={"none"} sx={{
+                                <Link href={"/portfolio#uiux"} underline={"none"} sx={{
                                     color: "#fff",
                                     px: 3,
                                     py: 1.5,

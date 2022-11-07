@@ -43,7 +43,7 @@ export default function Footer(){
                    sx={{
             backgroundColor: "rgb(16,16,16)",
             color: "common.white",
-            py: 4,
+            py: 2,
            borderTop: "1px solid rgba(255, 255, 255, 0.12)",
         }}>
 
@@ -84,7 +84,7 @@ export default function Footer(){
     </Grid>
 </Grid>
 <Divider sx={{mx: "auto", width: "100%", my: 3, borderColor: "initial"}}/>
-<Typography variant={"overline"} color={"gray"} align={"center"} component={"p"}>&copy; copyright: {new Date().getFullYear()}</Typography>
+<Typography variant={"overline"} color={"gray"} align={"center"} component={"p"}>NICHOLAS-AGBO &copy; copyright: {new Date().getFullYear()}</Typography>
         </Container>
 
             {/*SCROLL TO TOP BUTTON*/}

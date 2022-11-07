@@ -13,6 +13,7 @@ specifiers:
   '@types/react': ^18.0.21
   '@types/react-dom': ^18.0.6
   gsap: file:gsap.tgz
+  pnpm: ^7.14.2
   react: ^18.2.0
   react-dom: ^18.2.0
   react-helmet: ^6.1.0
@@ -34,6 +35,7 @@ specifiers:
   workbox-routing: ^6.5.4
   workbox-strategies: ^6.5.4
   workbox-streams: ^6.5.4
+  yarn: ^1.22.19
 
 dependencies:
   '@emotion/react': 11.10.4_iapumuv4e6jcjznwuxpf4tt22e
@@ -48,6 +50,7 @@ dependencies:
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
   gsap: file:gsap.tgz
+  pnpm: 7.14.2
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-helmet: 6.1.0_react@18.2.0
@@ -69,6 +72,7 @@ dependencies:
   workbox-routing: 6.5.4
   workbox-strategies: 6.5.4
   workbox-streams: 6.5.4
+  yarn: 1.22.19
 
 packages:
 
@@ -7504,6 +7508,12 @@ packages:
       find-up: 3.0.0
     dev: false
 
+  /pnpm/7.14.2:
+    resolution: {integrity: sha512-NSxrIaRW07jFQQ1fPFFOA8eMfuogsMeygOKd3zaFgyJBdo1oh61jl2JjWc+w0XNzWIMG7/v9HK7nP8RTL5NO3g==}
+    engines: {node: '>=14.6'}
+    hasBin: true
+    dev: false
+
   /postcss-attribute-case-insensitive/5.0.2_postcss@8.4.18:
     resolution: {integrity: sha512-XIidXV8fDr0kKt28vqki84fRK8VW8eTuIa4PChv2MqKuT6C9UjmSKzen6KaWhWEoYvwxFCa7n/tC1SZ3tyq4SQ==}
     engines: {node: ^12 || ^14 || >=16}
@@ -10415,6 +10425,13 @@ packages:
       string-width: 4.2.3
       y18n: 5.0.8
       yargs-parser: 20.2.9
+    dev: false
+
+  /yarn/1.22.19:
+    resolution: {integrity: sha512-/0V5q0WbslqnwP91tirOvldvYISzaqhClxzyUKXYxs07yUILIs5jx/k6CFe8bvKSkds5w+eiOqta39Wk3WxdcQ==}
+    engines: {node: '>=4.0.0'}
+    hasBin: true
+    requiresBuild: true
     dev: false
 
   /yn/3.1.1:
