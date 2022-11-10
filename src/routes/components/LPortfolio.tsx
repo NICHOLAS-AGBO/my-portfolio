@@ -24,6 +24,26 @@ export default function Loading(){
                 </Grid>
 
 
+
+
+                <Grid xs={12} md={6}>
+                    <Skeleton sx={{borderRadius: 8, aspectRatio: "16 / 9"}}
+                              animation={"wave"} variant={"rounded"}
+                              width={"100%"} height={300}/>
+                </Grid>
+
+
+
+
+                <Grid xs={12} md={6}>
+                    <Skeleton sx={{borderRadius: 8, aspectRatio: "16 / 9"}}
+                              animation={"wave"} variant={"rounded"}
+                              width={"100%"} height={300}/>
+                </Grid>
+
+
+
+
             </Grid>
         </Container>
     );

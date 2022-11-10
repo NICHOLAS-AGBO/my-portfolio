@@ -25,7 +25,7 @@ export default function Footer(){
 
     useEffect(()=>{
         const moveUp = ()=>{
-            if (window.scrollY>1500){
+            if (window.scrollY>1000){
                 setPopIn(true)
             }else {
                 setPopIn(false);
