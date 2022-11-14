@@ -11,6 +11,7 @@ import About from "./routes/about";
 import Notfound from "./routes/404";
 import UI from "./components/UI";
 import MyPortfolio from "./routes/myportfolio";
+import Contact from "./routes/contact";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -25,6 +26,7 @@ root.render(
               <Route path={"home"} element={<App/>}/>
               <Route path={"about-me"} element={<About/>}/>
               <Route path={"portfolio"} element={<MyPortfolio/>}/>
+              <Route path={"contact"} element={<Contact/>}/>
               <Route path={"*"} element={<Notfound/>}/>
           </Routes>
           <Outlet/>

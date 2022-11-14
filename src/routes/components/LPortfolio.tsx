@@ -3,8 +3,8 @@ import {Box, Container, IconButton, Link, Skeleton, styled, Typography, Unstable
 
 export default function Loading(){
     return(
-        <Container maxWidth={"lg"} id={"web"}>
-    <Skeleton variant={"text"} animation={"wave"} sx={{mx: "auto", my: 4, fontSize: "4rem", maxWidth: {xs: "60%", sm: "30%", md: "20%"}}}/>
+        <Container maxWidth={"lg"} disableGutters id={"web"}>
+    <Skeleton variant={"text"} animation={"wave"} sx={{mx: "auto", mb: 2, mt: 4, fontSize: "4rem", maxWidth: {xs: "60%", sm: "30%", md: "20%"}}}/>
             <Grid
                 container
                 justifyContent={"center"}

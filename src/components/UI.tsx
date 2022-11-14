@@ -2,6 +2,7 @@ import {ReactNode, useCallback, useEffect, useMemo, useState} from "react";
 import {createTheme, Paper, ThemeProvider, useMediaQuery} from "@mui/material";
 import gsap from "gsap";
 
+gsap.registerPlugin(MorphSVGPlugin);
 
 const mode = window.localStorage.mode;
 

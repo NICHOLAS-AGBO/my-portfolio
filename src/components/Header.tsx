@@ -1,11 +1,19 @@
-import {AppBar, Box, Collapse, IconButton, styled, Toolbar, Tooltip, Unstable_Grid2 as Grid} from "@mui/material";
+import {
+    AppBar,
+    Box,
+    Collapse,
+    IconButton,
+    styled,
+    Toolbar,
+    Tooltip,
+    Unstable_Grid2 as Grid
+} from "@mui/material";
 import {DarkMode, GitHub, Menu} from "@mui/icons-material";
 import {NavLink} from "react-router-dom";
 import {useCallback, useEffect, useState} from "react";
 import gsap from "gsap";
 
 
-gsap.registerPlugin(MorphSVGPlugin);
 
 const Item = styled(NavLink)(({theme})=>({
     ...theme.typography.body2,
@@ -19,14 +27,15 @@ const Item = styled(NavLink)(({theme})=>({
 }));
 
 const links = ['Home','About me',"Portfolio", "Contact","More"];
+const Logo = styled(NavLink)(({theme})=>({}))
 
 export default function Header(){
     const [menu, setMenu] = useState(false);
 
     const NavBar = styled(AppBar)(({theme})=>({
         backgroundColor: theme.palette.mode === "dark" ?
-        "rgba(16,16,16,0.8)" :
-            menu?"rgba(255,255,255,0.90)":"rgba(255,255,255,0.25)"
+        "rgba(16,16,16,0.9)" :
+            menu?"rgba(255,255,255,0.9)":"rgba(255,255,255,0.25)"
         ,
         backdropFilter: "blur(8px)"
     }));
@@ -37,8 +46,8 @@ export default function Header(){
         textAlign: "center",
         zIndex: 2,
         backgroundColor: theme.palette.mode === "dark" ?
-            "rgba(16,16,16,0.8)" :
-            menu?"rgba(255,255,255,0.90)":"rgba(255,255,255,0.25)"
+            "rgba(16,16,16,0.9)" :
+            menu?"rgba(255,255,255,0.9)":"rgba(255,255,255,0.25)"
         ,
         backdropFilter: "blur(8px)",
         width: "inherit",
@@ -77,11 +86,10 @@ export default function Header(){
                         <Menu id={"menu_svg"}/>
                         </Tooltip>
                     </IconButton>
-                <IconButton sx={{order: {xs: 2, sm: 0}}}>
-                    <NavLink to={"/"}>
+                    <Logo to={"/"} sx={{order: {xs: 2, sm: 0}}}
+                          onClick={()=>setMenu(false)}>
                         <GitHub/>
-                    </NavLink>
-                </IconButton>
+                    </Logo>
                 <Box component={"nav"} sx={{
                     flexGrow: 1,
                     display: {xs: "none", sm: "block"}
@@ -99,7 +107,7 @@ export default function Header(){
                         }
                     </Grid>
                 </Box>
-                <IconButton id={"theme_btn"} sx={{order: {xs: 3, sm: 0}}}>
+                <IconButton id={"theme_btn"} sx={{order: {xs: 3, sm: 0}}} onClick={()=>setMenu(false)}>
                     <Tooltip title={"Change theme"}>
                     <DarkMode id={"theme_icon"}/>
                     </Tooltip>
@@ -107,27 +115,30 @@ export default function Header(){
             </Toolbar>
 
             {/*FOR SMALL SCREEN*/}
-            <Collapse in={menu}
-                      timeout={"auto"}
-                      component={"nav"}
-                      sx={{
-                display: {sm: "none"},
-                width: "100%",
-            }}>
-                <Flex container
-                      spacing={1}
-                      direction={"column"}>
-                    {
-                        links.map((link,i)=>(
-                            <Item onClick={()=>setMenu(false)} style={({isActive})=>{
-                                return {textDecoration: isActive?"underline":"", width: "inherit"}
-                            }}
-                                  to={"/"+link.split(' ').join("-").toLowerCase()}
-                                  key={i}>{link}</Item>
-                        ))
-                    }
-                </Flex>
-            </Collapse>
+            {
+                menu &&
+                <Collapse in={menu}
+                          timeout={"auto"}
+                          component={"nav"}
+                          sx={{
+                              width: "100%",
+                          }}>
+                    <Flex container
+                          spacing={1}
+                          direction={"column"}>
+                        {
+                            links.map((link, i) => (
+                                <Item onClick={() => setMenu(false)} style={({isActive}) => {
+                                    return {textDecoration: isActive ? "underline" : "", width: "inherit"}
+                                }}
+                                      to={"/" + link.split(' ').join("-").toLowerCase()}
+                                      key={i}>{link}</Item>
+                            ))
+                        }
+                    </Flex>
+                </Collapse>
+            }
+
         </NavBar>
     );
 

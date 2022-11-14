@@ -37,18 +37,39 @@ const ScaleButton = styled(IconButton)(({theme})=>(
     }
 ));
 
+const MuiImage = styled("img")(({theme})=>({
+    width: "100%",
+    cursor: "pointer",
+    transition: `transform 0.5s ${theme.transitions.easing.sharp}`,
+    "&:hover":{
+        transform: "scale(1.05)",
+    }
+}));
+
+const Item= styled(Box)(({theme})=>({
+    aspectRatio: "16 / 9",
+    borderColor: theme.palette.common.white,
+    borderWidth: theme.spacing(0.5),
+    borderStyle: "solid",
+    borderRadius: theme.spacing(4),
+    position: "relative",
+    overflow: "hidden",
+    boxShadow: theme.shadows[2],
+    backgroundColor: theme.palette.common.white,
+}));
+
 export default function Portfolio(){
     return(
         <>
             {/*section web*/}
             <Grid xs={12}>
-        <Container maxWidth={"lg"} id={"web"}>
+        <Container maxWidth={"lg"} disableGutters id={"web"}>
 
             <Typography variant={"h4"} align={"center"} fontWeight={700}
                         sx={{
                             color: "primary.main",
                             fontSize: {xs: "h5.fontSize", md: "h4.fontSize"},
-                            my: 4
+                            mb: 2,
             }}>
                 Web projects
             </Typography>
@@ -58,47 +79,27 @@ export default function Portfolio(){
                 spacing={3}
             >
                 <Grid xs={12} md={6}>
-                    <Box sx={{
-                        aspectRatio: "16 / 9",
-                        borderColor: "common.white",
-                        borderWidth: "medium",
-                        borderStyle: "solid",
-                        borderRadius: 8,
-                        position: "relative",
-                        overflowY: "hidden",
-                        boxShadow: 3,
-                        bgColor: "common.white",
-                    }}>
+                    <Item>
                         <ScaleButton size={"small"}>
                             <OpenInFull/>
                         </ScaleButton>
-                    <img src={web1} alt={"web project image"} width={"100%"}/>
+                    <MuiImage src={web1} alt={"web project image"} />
                     <HiddenDrawer href={"#"} variant={"subtitle1"} color={"inherit"} title={"view this project"}>
                             https://myproject.com/
                     </HiddenDrawer>
-                    </Box>
+                    </Item>
                 </Grid>
 
                 <Grid xs={12} md={6}>
-                    <Box sx={{
-                        aspectRatio: "16 / 9",
-                        borderColor: "common.white",
-                        borderWidth: "medium",
-                        borderStyle: "solid",
-                        borderRadius: 8,
-                        position: "relative",
-                        overflowY: "hidden",
-                        boxShadow: 3,
-                        bgColor: "common.white",
-                    }}>
+                    <Item>
                         <ScaleButton size={"small"}>
                             <OpenInFull/>
                         </ScaleButton>
-                        <img src={web1} alt={"web project image"} width={"100%"}/>
+                        <MuiImage src={web1} alt={"web project image"} />
                         <HiddenDrawer href={"#"} variant={"subtitle1"} color={"inherit"} title={"view this project"}>
                             https://myproject.com/
                         </HiddenDrawer>
-                    </Box>
+                    </Item>
                 </Grid>
 
 
@@ -109,13 +110,13 @@ export default function Portfolio(){
 
             {/*section graphics*/}
             <Grid xs={12}>
-        <Container maxWidth={"lg"} id={"graphics"}>
+        <Container maxWidth={"lg"} disableGutters id={"graphics"}>
 
         <Typography variant={"h4"} align={"center"} fontWeight={700}
                     sx={{
                         color: "primary.main",
                         fontSize: {xs: "h5.fontSize", md: "h4.fontSize"},
-                        my: 4
+                        mb: 2,
                     }}>
             Graphics projects
         </Typography>
@@ -125,47 +126,27 @@ export default function Portfolio(){
             spacing={3}
         >
             <Grid xs={12} md={6}>
-                <Box sx={{
-                    aspectRatio: "16 / 9",
-                    borderColor: "common.white",
-                    borderWidth: "medium",
-                    borderStyle: "solid",
-                    borderRadius: 8,
-                    position: "relative",
-                    overflowY: "hidden",
-                    boxShadow: 3,
-                    bgColor: "common.white",
-                }}>
+                <Item>
                     <ScaleButton size={"small"}>
                         <OpenInFull/>
                     </ScaleButton>
-                    <img src={graphics1} alt={"graphics project image"} width={"100%"}/>
+                    <MuiImage src={graphics1} alt={"graphics project image"} />
                     <HiddenDrawer href={"#"} variant={"subtitle1"} color={"inherit"} title={"view this project"}>
                         https://myproject.com/
                     </HiddenDrawer>
-                </Box>
+                </Item>
             </Grid>
 
             <Grid xs={12} md={6}>
-                <Box sx={{
-                    aspectRatio: "16 / 9",
-                    borderColor: "common.white",
-                    borderWidth: "medium",
-                    borderStyle: "solid",
-                    borderRadius: 8,
-                    position: "relative",
-                    overflowY: "hidden",
-                    boxShadow: 3,
-                    bgColor: "common.white",
-                }}>
+                <Item>
                     <ScaleButton size={"small"}>
                         <OpenInFull/>
                     </ScaleButton>
-                    <img src={graphics1} alt={"graphics project image"} width={"100%"}/>
+                    <MuiImage src={graphics1} alt={"graphics project image"} />
                     <HiddenDrawer href={"#"} variant={"subtitle1"} color={"inherit"} title={"view this project"}>
                         https://myproject.com/
                     </HiddenDrawer>
-                </Box>
+                </Item>
             </Grid>
 
 
@@ -176,13 +157,13 @@ export default function Portfolio(){
 
             {/*section UI/UX*/}
             <Grid xs={12}>
-    <Container maxWidth={"lg"} id={"uiux"}>
+    <Container maxWidth={"lg"} disableGutters id={"uiux"}>
 
         <Typography variant={"h4"} align={"center"} fontWeight={700}
                     sx={{
                         color: "primary.main",
                         fontSize: {xs: "h5.fontSize", md: "h4.fontSize"},
-                        my: 4
+                        mb: 2,
                     }}>
             UI/UX projects
         </Typography>
@@ -192,47 +173,27 @@ export default function Portfolio(){
             spacing={3}
         >
             <Grid xs={12} md={6}>
-                <Box sx={{
-                    aspectRatio: "16 / 9",
-                    borderColor: "common.white",
-                    borderWidth: "medium",
-                    borderStyle: "solid",
-                    borderRadius: 8,
-                    position: "relative",
-                    overflowY: "hidden",
-                    boxShadow: 3,
-                    bgColor: "common.white",
-                }}>
+                <Item>
                     <ScaleButton size={"small"}>
                         <OpenInFull/>
                     </ScaleButton>
-                    <img src={uiux1} alt={"uiux project image"} width={"100%"}/>
+                    <MuiImage src={uiux1} alt={"uiux project image"} />
                     <HiddenDrawer href={"#"} variant={"subtitle1"} color={"inherit"} title={"view this project"}>
                         https://myproject.com/
                     </HiddenDrawer>
-                </Box>
+                </Item>
             </Grid>
 
             <Grid xs={12} md={6}>
-                <Box sx={{
-                    aspectRatio: "16 / 9",
-                    borderColor: "common.white",
-                    borderWidth: "medium",
-                    borderStyle: "solid",
-                    borderRadius: 8,
-                    position: "relative",
-                    overflowY: "hidden",
-                    boxShadow: 3,
-                    bgColor: "common.white",
-                }}>
+                <Item>
                     <ScaleButton size={"small"}>
                         <OpenInFull/>
                     </ScaleButton>
-                    <img src={uiux1} alt={"uiux project image"} width={"100%"}/>
+                    <MuiImage src={uiux1} alt={"uiux project image"} />
                     <HiddenDrawer href={"#"} variant={"subtitle1"} color={"inherit"} title={"view this project"}>
                         https://myproject.com/
                     </HiddenDrawer>
-                </Box>
+                </Item>
             </Grid>
 
 
