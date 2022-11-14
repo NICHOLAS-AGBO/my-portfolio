@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@emotion/react': ^11.10.4
   '@emotion/styled': ^11.10.4
+  '@formspree/react': ^2.4.1
   '@mui/icons-material': ^5.10.9
   '@mui/material': ^5.10.10
   '@testing-library/jest-dom': ^5.16.5
@@ -40,6 +41,7 @@ specifiers:
 dependencies:
   '@emotion/react': 11.10.4_iapumuv4e6jcjznwuxpf4tt22e
   '@emotion/styled': 11.10.4_g3tud4ene45llglqap74b5kkse
+  '@formspree/react': 2.4.1_biqbaboplfbrettd7655fr4n2y
   '@mui/icons-material': 5.10.9_z3olqqf34i6isisqzfodoltscq
   '@mui/material': 5.10.10_ikcgkdnp4bn3rgptamntbhbo7e
   '@testing-library/jest-dom': 5.16.5
@@ -1783,6 +1785,16 @@ packages:
       - supports-color
     dev: false
 
+  /@formspree/react/2.4.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-ZP3oZ7HIMf6KK2sbz4H5XLNXjXBJotI9nveSiTX68Uc1eGzWjBKQqp2qAFlOSjmvgoYMkjJ7NtVD14s49ZrBow==}
+    dependencies:
+      '@stripe/react-stripe-js': 1.14.2_mljfwq7caaxrtdqn7u72ntpebq
+      '@stripe/stripe-js': 1.44.1
+    transitivePeerDependencies:
+      - react
+      - react-dom
+    dev: false
+
   /@humanwhocodes/config-array/0.10.7:
     resolution: {integrity: sha512-MDl6D6sBsaV452/QSdX+4CXIjZhIcI0PELsxUjk4U828yd58vk3bTIvk/6w5FY+4hIy9sLW0sfrV7K7Kc++j/w==}
     engines: {node: '>=10.10.0'}
@@ -2430,6 +2442,23 @@ packages:
     resolution: {integrity: sha512-OAPJUAtgeINhh/TAlUID4QTs53Njm7xzddaVlEs/SXwgtiD1tW22zAB/W1wdqfrpmikgaWQ9Fw6Ws+hsiRm5Vg==}
     dependencies:
       '@sinonjs/commons': 1.8.3
+    dev: false
+
+  /@stripe/react-stripe-js/1.14.2_mljfwq7caaxrtdqn7u72ntpebq:
+    resolution: {integrity: sha512-8dGBdSFldq6dyiYgv3r4tOwS5PGAO/446hodegSKlmWg7NkAl0McopszXJd11A9otGi47v5OzCsljyfHJgnLhw==}
+    peerDependencies:
+      '@stripe/stripe-js': ^1.42.1
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@stripe/stripe-js': 1.44.1
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@stripe/stripe-js/1.44.1:
+    resolution: {integrity: sha512-DKj3U6tS+sCNsSXsoZbOl5gDrAVD3cAZ9QCiVSykLC3iJo085kkmw/3BAACRH54Bq2bN34yySuH6G1SLh2xHXA==}
     dev: false
 
   /@surma/rollup-plugin-off-main-thread/2.2.3:

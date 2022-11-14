@@ -27,7 +27,7 @@ const Item = styled(NavLink)(({theme})=>({
 }));
 
 const links = ['Home','About me',"Portfolio", "Contact","More"];
-const Logo = styled(NavLink)(({theme})=>({}))
+const Logo = styled(NavLink)(()=>({}))
 
 export default function Header(){
     const [menu, setMenu] = useState(false);
