@@ -3,7 +3,6 @@ import {
     Button,
     Container,
     Unstable_Grid2 as Grid,
-    Paper,
     styled,
     Typography,
     Tooltip,

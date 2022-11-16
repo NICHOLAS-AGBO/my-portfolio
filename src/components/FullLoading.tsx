@@ -1,4 +1,4 @@
-import {Box, CircularProgress, Paper} from "@mui/material";
+import {CircularProgress, Paper} from "@mui/material";
 import React from "react";
 
 export default function Loading(){
