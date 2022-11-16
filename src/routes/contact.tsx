@@ -63,6 +63,7 @@ function ContactForm() {
               component={"fieldset"}
               rowSpacing={2}
               direction={"column"}
+              sx={{borderRadius: 2}}
               id="work">
             <Typography component={"legend"} align={"center"} variant={"h4"} fontWeight={700}>Contact me</Typography>
             <Grid xs={12}>
@@ -125,13 +126,22 @@ function ContactForm() {
             <Grid xs={12}>
                 <Button fullWidth
                         variant={"contained"}
-                        disableElevation
                         type="submit"
                         size={"large"}
                         disabled={state.submitting}
                         sx={{
-                            backgroundColor: "common.black",
-                            color: "common.white"
+                            backgroundColor: "primary.main",
+                            color: "secondary.main",
+                            borderColor: "secondary.main",
+                            borderWidth: 2,
+                            borderStyle: "solid",
+                            "&:hover":{
+                                backgroundColor: "secondary.main",
+                                color: "primary.main",
+                                borderColor: "primary.main",
+                                borderWidth: 2,
+                                borderStyle: "solid",
+                            }
                         }}
                 >
                     {state.submitting?<>Submitting</>:<>Submit</>}
