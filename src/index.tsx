@@ -4,7 +4,6 @@ import App from './App';
 import './App.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 // import reportWebVitals from './reportWebVitals';
-import Header from "./components/Header";
 import Footer from "./components/Footer";
 import {BrowserRouter as Router, Routes, Route, Outlet} from "react-router-dom";
 import About from "./routes/about";
@@ -20,7 +19,6 @@ root.render(
   <React.StrictMode>
       <Router>
           <UI>
-          <Header/>
           <Routes>
               <Route path={"/"} element={<App/>}/>
               <Route path={"home"} element={<App/>}/>
