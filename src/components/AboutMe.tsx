@@ -2,7 +2,7 @@ import {
     Avatar,
     Button,
     Container,
-    Unstable_Grid2 as Grid,
+    Grid,
     styled,
     Typography,
     Tooltip,

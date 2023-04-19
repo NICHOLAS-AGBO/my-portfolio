@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC, ReactNode} from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './App.css';
@@ -8,28 +8,36 @@ import Footer from "./components/Footer";
 import {BrowserRouter as Router, Routes, Route, Outlet} from "react-router-dom";
 import About from "./routes/about";
 import Notfound from "./routes/404";
-import UI from "./components/UI";
+import Header from "./components/Header";
 import MyPortfolio from "./routes/myportfolio";
 import Contact from "./routes/contact";
+import useTheme from "./hooks/useTheme";
+
+const Theme:FC<{children: ReactNode}> = ({children})=>{
+    const {UI} = useTheme()
+    return <UI>{children}</UI>
+}
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
       <Router>
-          <UI>
-          <Routes>
-              <Route path={"/"} element={<App/>}/>
-              <Route path={"home"} element={<App/>}/>
-              <Route path={"about-me"} element={<About/>}/>
-              <Route path={"portfolio"} element={<MyPortfolio/>}/>
-              <Route path={"contact"} element={<Contact/>}/>
-              <Route path={"*"} element={<Notfound/>}/>
-          </Routes>
-          <Outlet/>
-          <Footer/>
-          </UI>
+          <Theme>
+              <Header/>
+              <Routes>
+                  <Route path={"/"} element={<App/>}/>
+                  <Route path={"home"} element={<App/>}/>
+                  <Route path={"about-me"} element={<About/>}/>
+                  <Route path={"portfolio"} element={<MyPortfolio/>}/>
+                  <Route path={"contact"} element={<Contact/>}/>
+                  <Route path={"*"} element={<Notfound/>}/>
+              </Routes>
+              <Outlet/>
+              <Footer/>
+          </Theme>
       </Router>
   </React.StrictMode>
 );

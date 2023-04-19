@@ -1,41 +1,15 @@
-import {ReactNode, useCallback, useEffect, useMemo, useState} from "react";
+import {ReactNode, useEffect, useState} from "react";
 import {
     AppBar, Box, Collapse,
-    createTheme, IconButton,
-    Paper,
+    IconButton,
     styled, Switch,
-    ThemeProvider,
     Toolbar, Tooltip,
-    Unstable_Grid2 as Grid,
-    useMediaQuery
+    Grid
 } from "@mui/material";
-import {DarkMode, GitHub, LightMode, Menu, MenuOpen} from "@mui/icons-material";
+import {GitHub, Menu, MenuOpen} from "@mui/icons-material";
 import {NavLink} from "react-router-dom";
+import useTheme from "../hooks/useTheme";
 
-//Theme variables
-const darkTheme:any = {
-    palette: {
-        mode: "dark",
-        primary:{
-            main: "#fff",
-        },
-        secondary:{
-            main: "#000"
-        }
-    }
-};
-const lightTheme:any = {
-    palette: {
-        mode: "light",
-        primary:{
-            main: "#000",
-        },
-        secondary:{
-            main: "#fff"
-        }
-    }
-};
-const mode = window.localStorage.mode;
 
 //Links Navbar
 const links = ['Home','About me',"Portfolio", "Contact","More"];
@@ -102,12 +76,9 @@ const ThemeSwitch = styled(Switch)(({ theme }) => ({
     },
 }));
 
-export default function UI({children}:{children:ReactNode}){
-    const muiMedia = useMediaQuery("(prefers-color-scheme: dark)");
-    const systemMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const [theme, setTheme] = useState(lightTheme);
+export default function Header(){
     const [menu, setMenu] = useState(false);
-
+    const {changeTheme, mode} = useTheme();
     const NavBar = styled(AppBar)(({theme})=>({
         backgroundColor: theme.palette.mode === "dark" ?
             "rgba(16,16,16,0.9)" :
@@ -132,49 +103,14 @@ export default function UI({children}:{children:ReactNode}){
 
     }))
 
-    //theme change function
-    const changeTheme = useCallback(()=> {
-        if (theme.palette.mode === "dark") {
-            setTheme(lightTheme);
-            window.localStorage.setItem("mode","light");
-        }
-        if (theme.palette.mode === "light") {
-            setTheme(darkTheme);
-            window.localStorage.setItem("mode","dark");
-        }
-    },[theme]);
 
     //for closing menu when viewport resizes
     useEffect(() => {
         window.addEventListener("resize",()=>setMenu(false));
     });
 
-    //for controlling active theme on refresh
-    useEffect(()=>{
-        if (mode){
-            if (mode === "dark") setTheme(darkTheme);
-            if (mode === "light") setTheme(lightTheme);
-        }else {
-            if (systemMode&&muiMedia) {
-                setTheme(darkTheme);
-            }
-            else {
-                setTheme(lightTheme);
-            }
-        }
-    }, [muiMedia, systemMode]);
-
-
-    //Theme value
-    const Theme = useMemo(()=>createTheme(theme),[theme]);
-
     return(
-        <ThemeProvider theme={Theme}>
-            <Paper
-                elevation={0}
-                sx={{borderRadius: 0, p: 0, m: 0}}>
-            {/*section header*/}
-                <NavBar variant={"outlined"}
+        <NavBar variant={"outlined"}
                         position={"sticky"}
                         elevation={0}>
                     <Toolbar sx={{justifyContent: {xs: "space-between", sm: "start"}}}>
@@ -208,7 +144,7 @@ export default function UI({children}:{children:ReactNode}){
                             </Grid>
                         </Box>
                         <ThemeSwitch sx={{order: {xs: 3, sm: 0}}}
-                            checked={theme.palette.mode==="dark"}
+                            checked={mode==="dark"}
                             onClick={changeTheme}
                         />
                     </Toolbar>
@@ -239,8 +175,5 @@ export default function UI({children}:{children:ReactNode}){
                     }
 
                 </NavBar>
-            {children}
-            </Paper>
-        </ThemeProvider>
     );
 }

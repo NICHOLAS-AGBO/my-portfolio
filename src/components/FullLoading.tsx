@@ -1,5 +1,6 @@
-import {CircularProgress, Paper} from "@mui/material";
+import {Box, CircularProgress, Paper} from "@mui/material";
 import React from "react";
+import logo from "../logo.svg"
 
 export default function Loading(){
     return(
@@ -11,8 +12,13 @@ export default function Loading(){
                 alignItems: "center",
                 width: "100vw",
                 height: "90vh",
+                position: "relative"
             }}>
-                <CircularProgress color={"primary"}/>
+                <Box sx={{
+                    position: "absolute",
+                    zIndex: 1,
+                }}><img src={logo} alt={"website logo"} width={50}/></Box>
+                <CircularProgress color={"primary"} size={80} thickness={1} sx={{opacity: .9}}/>
             </Paper>
     );
 }

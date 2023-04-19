@@ -5,6 +5,7 @@ import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 import {useEffect} from "react";
 //DEVELOPER
 import NextJs from "../img/skills/800px-Nextjs-logo.svg.png"
+import NextJsW from "../img/skills/nextjs-logo.png"
 import ReactJs from "../logo.svg"
 import TSC from "../img/skills/10b88c68-typescript-logo-1024x576.png"
 import Js from "../img/skills/JavaScript-logo.png"
@@ -28,10 +29,12 @@ import IND from "../img/skills/Adobe_InDesign_CC_icon.svg.png"
 import Corel from "../img/skills/CorelDraw_logo.svg.png"
 import Figma from "../img/skills/figma_logo.png"
 import XD from "../img/skills/Adobe_XD_CC_icon.svg.png"
+import useTheme from "../hooks/useTheme";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Skills(){
+    const {mode} = useTheme();
 
     useEffect(()=>{
 
@@ -93,7 +96,7 @@ media.add("(max-width: 799px)", ()=>{
                         },
                     }}>
                         <Stack direction={"column"} alignItems={"center"} spacing={1}>
-                            <img width={150} src={NextJs} alt={"next js logo"}/>
+                            <img width={150} src={mode==='dark'?NextJsW:NextJs} alt={"next js logo"}/>
                         </Stack>
                     </Grid>
 

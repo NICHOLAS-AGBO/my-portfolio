@@ -18,8 +18,8 @@ export default function About(){
                                 alt={"nicholas-agbo"}
                                 sx={{
                                     mx: "auto",
-                                    width: {xs: 150, md: 200},
-                                    height: {xs: 150, md: 200},
+                                    width: 150,
+                                    height: 150,
                                     outlineColor: "primary.main",
                                     outlineWidth: 2,
                                     outlineStyle: "dotted",
@@ -33,13 +33,13 @@ export default function About(){
                     </Grid>
                     <Grid sx={{textAlign: "center"}}>
                         <Typography variant={"h1"} fontWeight={900} align={"center"}
-                                    sx={{fontSize: {xs: "h4.fontSize", md: "h2.fontSize"}}}>NICHOLAS AGBO</Typography>
+                                    sx={{fontSize: {xs: "h4.fontSize", md: "h3.fontSize"}}}>NICHOLAS AGBO</Typography>
                         <Typography variant={"body2"} sx={{color: "gray",}}>
                             Web Developer, UI/UX designer, Graphics designer/Tutor
                         </Typography>
                     </Grid>
                     <Grid>
-                        <Typography>
+                        <Typography align={"center"}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Mauris a interdum nibh. Vivamus non urna condimentum, pulvinar erat ut,
                             mattis dui. Vestibulum eu tellus eu odio posuere efficitur.
