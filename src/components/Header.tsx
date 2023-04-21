@@ -1,4 +1,4 @@
-import {ReactNode, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {
     AppBar, Box, Collapse,
     IconButton,
@@ -6,9 +6,12 @@ import {
     Toolbar, Tooltip,
     Grid
 } from "@mui/material";
-import {GitHub, Menu, MenuOpen} from "@mui/icons-material";
+import {Menu, MenuOpen} from "@mui/icons-material";
 import {NavLink} from "react-router-dom";
 import useTheme from "../hooks/useTheme";
+import dark_logo from "../img/darklogo_.png";
+import light_logo from "../img/lightlogo_.png";
+
 
 
 //Links Navbar
@@ -124,7 +127,7 @@ export default function Header(){
                         </IconButton>
                         <Logo to={"/"} sx={{order: {xs: 2, sm: 0}}}
                               onClick={()=>setMenu(false)}>
-                            <GitHub/>
+                            <img src={mode==="dark"?light_logo:dark_logo} alt={"nicholas_agbo logo"} width={45}/>
                         </Logo>
                         <Box component={"nav"} sx={{
                             flexGrow: 1,

@@ -1,11 +1,14 @@
 import {styled, Typography, Unstable_Grid2 as Grid} from "@mui/material";
 import {NavLink} from "react-router-dom";
+import me from "../img/pic.png";
+import useTheme from "../hooks/useTheme";
 
 
 export default function Notfound(){
     const Link = styled(NavLink)(({theme})=>({
         color: theme.palette.primary.main
     }));
+    const {mode} = useTheme();
 
     return(
         <Grid container
@@ -14,6 +17,7 @@ export default function Notfound(){
               alignItems={"center"}
               direction={"column"}
         >
+            <img src={me} alt={"nicholas_agbo logo"} width={100}/>
             <Typography color={"primary"} sx={{fontSize: {xs: "h3.fontSize", sm: "h2.fonSize"}}} fontWeight={900}>
                 Page not found
             </Typography>

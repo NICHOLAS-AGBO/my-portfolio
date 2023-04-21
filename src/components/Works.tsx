@@ -31,8 +31,11 @@ export default function Works(){
                        <Typography fontWeight={300}>Web Developer</Typography>
                    </Grid>
                    <Grid xs={12} md={9} sx={{px: 2}}>
-                       <Typography component={"p"} sx={{color: "primary.main"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a interdum nibh. Vivamus non urna condimentum, pulvinar erat ut, mattis dui.
-                           Vestibulum eu tellus eu odio posuere efficitur.</Typography>
+                       <Typography component={"p"} sx={{color: "primary.main"}}>
+                           As a developer, I have great experience with the challenges that is involve
+                           in web. I have a very ground and proficient knowledge of web. I spend
+                           time in knowing more about new web technologies. Above all I love coding.
+                       </Typography>
                    </Grid>
 <Divider sx={{width: "100%"}}/>
 
@@ -48,8 +51,11 @@ export default function Works(){
                        <Typography fontWeight={300}>UI/UX Designer</Typography>
                    </Grid>
                    <Grid xs={12} md={9} sx={{px: 2}}>
-                       <Typography component={"p"} sx={{color: "primary.main"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a interdum nibh. Vivamus non urna condimentum, pulvinar erat ut, mattis dui.
-                           Vestibulum eu tellus eu odio posuere efficitur.</Typography>
+                       <Typography component={"p"} sx={{color: "primary.main"}}>
+                           As a UI/UX designer, I have good knowledge as a teacher and as an experienced
+                           designer. Getting to know about UI is a great thing as a frontend developer.
+                           I have designed many UI as a freelancer and as a TUTOR.
+                       </Typography>
                    </Grid>
                    <Divider sx={{width: "100%"}}/>
 
@@ -66,8 +72,11 @@ export default function Works(){
                        <Typography fontWeight={300}>Graphics Designer/Tutor</Typography>
                    </Grid>
                    <Grid xs={12} md={9} sx={{px: 2}}>
-                       <Typography component={"p"} sx={{color: "primary.main"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a interdum nibh. Vivamus non urna condimentum, pulvinar erat ut, mattis dui.
-                           Vestibulum eu tellus eu odio posuere efficitur.</Typography>
+                       <Typography component={"p"} sx={{color: "primary.main"}}>
+                           As a graphics designer and a tutor, I have spent most of my time teaching and designing
+                           for companies. I have 8years experience as a graphics designer and I have trained about
+                           50 students when I started teaching.
+                       </Typography>
                    </Grid>
                    <Divider sx={{width: "100%"}}/>
 

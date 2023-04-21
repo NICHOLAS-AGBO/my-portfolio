@@ -22,6 +22,7 @@ import BootStrap from "../img/skills/Bootstrap_logo.svg.png"
 import Sass from "../img/skills/1280px-Sass_Logo_Color.svg.png"
 import Laravel from "../img/skills/1200px-Laravel.svg.png"
 import Prisma from "../img/skills/prisma-2.svg"
+import Svelte from "../img/skills/Svelte_Logo.svg.png"
 //DESIGNER
 import PSD from "../img/skills/Adobe_Photoshop_CC_icon.svg.png"
 import AI from "../img/skills/Adobe_Illustrator_CC_icon.svg.png"
@@ -288,6 +289,24 @@ media.add("(max-width: 799px)", ()=>{
                         <Stack direction={"column"} alignItems={"center"} spacing={1}>
                             <img width={100} src={Angular} alt={"angular logo"}/>
                             <Typography sx={{color: "primary.main"}}>Angular</Typography>
+                        </Stack>
+                    </Grid>
+
+                    <Grid xs={4} md={3} lg={2} className={"skills"} sx={{
+                        p: 2,
+                        filter: "grayscale(90%)",
+                        cursor: "default",
+                        transition: "all 300ms",
+                        "&:hover":{
+                            filter: "grayscale(0%)",
+                            transform: "scale(0.9)",
+                        },
+                        "&:hover div p":{
+                            color: "orangered"
+                        }}}>
+                        <Stack direction={"column"} alignItems={"center"} spacing={1}>
+                            <img width={100} src={Svelte} alt={"angular logo"}/>
+                            <Typography sx={{color: "primary.main"}}>Svelte</Typography>
                         </Stack>
                     </Grid>
 

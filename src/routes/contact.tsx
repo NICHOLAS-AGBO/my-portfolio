@@ -2,7 +2,7 @@
 import {Helmet} from "react-helmet";
 import React from "react";
 import {
-    Alert, AlertTitle,
+    AlertTitle,
     Avatar,
     Box, Button,
     Container,
@@ -15,6 +15,8 @@ import {
 import me from "../img/pic.png";
 import {Close, Email, Facebook, GitHub, LinkedIn, Twitter} from "@mui/icons-material";
 import { useForm, ValidationError } from '@formspree/react';
+import * as Toast from '@radix-ui/react-toast';
+import Loading from "../components/FullLoading";
 
 const EmailContainer = styled(Stack)(({theme})=>({
     flexWrap: "nowrap",
@@ -30,7 +32,8 @@ const EmailContainer = styled(Stack)(({theme})=>({
     paddingLeft: theme.spacing(1),
     background: theme.palette.mode==="dark"?"rgba(255,255,255,.15)":"#f2f2f2",
     width: "max-content"
-}))
+}));
+
 
 function ContactForm() {
     const [val, setVal] = React.useState({
@@ -53,8 +56,6 @@ function ContactForm() {
         }
     };
 
-    // @ts-ignore
-    // @ts-ignore
     // @ts-ignore
     return(
 <>
@@ -150,37 +151,47 @@ function ContactForm() {
 
         </Grid>
     </form>
-    {(alert&&state.succeeded)&&
-        <Slide direction="right"
-               in={state.succeeded}
-               mountOnEnter unmountOnExit>
-            <Alert variant={"filled"} action={
-                <IconButton color={"inherit"}
-                            size={"small"}
-                            onClick={()=> {
-                                setVal({
-                                    name: "",
-                                    email: "",
-                                    message: ""
-                                });
-                                setAlert(false);
-                            }}>
-                    <Close/></IconButton>}
-                   sx={{width: "max-content", my: 1}}
-                   severity={"success"}
-            >
-                <AlertTitle>Message submitted</AlertTitle>
-                Thanks for contacting me.
-            </Alert>
-        </Slide>
-    }
+
+    <Toast.Provider swipeDirection="right">
+
+
+        <Toast.Root className="ToastRoot" open={alert&&state.succeeded} onOpenChange={setAlert}>
+            <Toast.Title className="ToastTitle"><Typography>Email was sent</Typography></Toast.Title>
+            <Toast.Description asChild>
+                <Typography variant={"caption"} className="ToastDescription">
+                    your email was received
+                </Typography>
+            </Toast.Description>
+            <Toast.Action className="ToastAction" asChild altText="Goto schedule to undo">
+                <IconButton
+                    sx={{
+                        color: "common.white",
+                        backgroundColor: "common.black",
+                        "&:hover":{
+                            color: "common.white",
+                            backgroundColor: "common.black"
+                        }
+                    }} onClick={()=> {
+                    setVal({
+                        name: "",
+                        email: "",
+                        message: ""
+                    });
+                    setAlert(false);
+                }}><Close/></IconButton>
+            </Toast.Action>
+        </Toast.Root>
+        <Toast.Viewport className="ToastViewport" />
+    </Toast.Provider>
+
+
 </>
 );
 }
 
 
 export default function Contact(){
-    return(<>
+    return(<React.Suspense fallback={<Loading/>}>
         <Helmet>
             <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -239,7 +250,8 @@ export default function Contact(){
                 <IconButton disabled>
                     <GitHub/>
                 </IconButton>
-                <Typography>NICHOLAS-AGBO</Typography>
+                <Link href={"https://github.com/NICHOLAS-AGBO"} underline={"none"} target={"_blank"}>
+                    <Typography>NICHOLAS-AGBO</Typography></Link>
             </Stack>
         </Grid>
 
@@ -254,7 +266,8 @@ export default function Contact(){
                 <IconButton disabled>
                     <Facebook/>
                 </IconButton>
-                <Typography>Nicholas Agbo</Typography>
+                <Link href={"https://www.facebook.com/michael.agbo.1650"} underline={"none"} target={"_blank"}>
+                    <Typography>Nicholas Agbo</Typography></Link>
             </Stack>
         </Grid>
 
@@ -268,7 +281,8 @@ export default function Contact(){
                 <IconButton disabled>
                     <Twitter/>
                 </IconButton>
-                <Typography>AgboNicholas1</Typography>
+                <Link href={"https://twitter.com/AgboNicholas1?fbclid=IwAR1QG--PNYqvWpAooAdfeOEVujoa25KrqVAIK3NaGsT6dJ_Cs_I72NnLSsY"} underline={"none"} target={"_blank"}>
+                    <Typography>AgboNicholas1</Typography></Link>
             </Stack>
         </Grid>
 
@@ -282,7 +296,8 @@ export default function Contact(){
                 <IconButton disabled>
                     <LinkedIn/>
                 </IconButton>
-                <Typography>Nicholas Agbo</Typography>
+                <Link href={"https://www.linkedin.com/in/nicholas-agbo-9a380b202/"} underline={"none"} target={"_blank"}>
+                    <Typography>Nicholas Agbo</Typography></Link>
             </Stack>
         </Grid>
 
@@ -292,5 +307,5 @@ export default function Contact(){
     {/*    section form*/}
 <ContactForm/>
 </Container>
-    </>)
+    </React.Suspense>)
 }

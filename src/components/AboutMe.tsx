@@ -56,10 +56,8 @@ export default function AboutMe(){
             <Typography variant={"body1"}
                         component={"p"}
                         sx={{textAlign: "center"}}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Mauris a interdum nibh. Vivamus non urna condimentum,
-                pulvinar erat ut, mattis dui.
-                Vestibulum eu tellus eu odio posuere efficitur.
+                Fullstack web developer with 6years experience in Web Development.
+                <br/> I specialise mostly in React, Next.js, Django, Web3.
             </Typography>
     </Grid>
 

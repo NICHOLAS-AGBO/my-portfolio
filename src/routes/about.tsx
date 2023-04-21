@@ -1,4 +1,4 @@
-import {Avatar, Container, Typography, Unstable_Grid2 as Grid} from "@mui/material";
+import {Avatar, Container, Link, Typography, Unstable_Grid2 as Grid} from "@mui/material";
 import Nicholas from "../img/pic.png";
 import Loading from "../components/FullLoading";
 import React from "react";
@@ -11,7 +11,7 @@ export default function About(){
                       justifyContent={"center"}
                       alignItems={"center"}
                       direction={"column"}
-                      rowSpacing={5}
+                      rowSpacing={3}
                 >
                     <Grid>
                         <Avatar src={Nicholas}
@@ -39,21 +39,36 @@ export default function About(){
                         </Typography>
                     </Grid>
                     <Grid>
-                        <Typography align={"center"}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Mauris a interdum nibh. Vivamus non urna condimentum, pulvinar erat ut,
-                            mattis dui. Vestibulum eu tellus eu odio posuere efficitur.
-                            Nulla vel varius mauris. Donec mattis elit et lorem ultricies dapibus.
-                            In porttitor bibendum tellus sed vulputate. Nam in luctus dui.
-                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-                            ac turpis egestas. Suspendisse hendrerit est nec convallis sodales.
-                            Suspendisse vel mauris malesuada, consequat sem quis, sollicitudin urna.
-                            Proin rhoncus, turpis ac bibendum tempor, justo turpis mattis risus, ac
-                            porttitor urna leo in nunc. Aliquam scelerisque enim in varius mattis.
-                            Integer ultricies, ex non tincidunt condimentum, tellus lacus semper est,
-                            sit amet consequat lectus est id libero. Nullam ipsum ante,
-                            bibendum nec sem ut, sagittis dictum sem. Pellentesque luctus, diam sit amet
-                            facilisis lacinia, ex urna tincidunt enim, eget lacinia est est in neque.
+                        <Typography>
+                            <b>NICHOLAS AGBO</b> is a proud Nigerian based in Enugu State,
+                            I am a fullstack developer with 6 years of experience, and a visual designer with 8 years of experience.
+                            I specialize more on React, NextJS, NodeJS, Express, Web3.
+                            I worked for Metacares as a fullstack and blockchain developer in the year 2022,
+                            Other years I spent my time as a freelancer. For the past 6 years I worked as a freelancer,
+                            in the year 2021 I worked as a Graphics Tutor/Designer and a UI/UX designer at Digital Dreams LTD.
+                            After few months I moved to another company by name
+                            "<Link href={"https://www.vtechservicesng.com/team"} target={"_blank"}>V-TECH ICT Academy</Link>" ,
+                            which I was given the position of a Graphics Tutor/Designer and a UI/UX designer, I currently work there till date.
+                            I have great passion for web development, being the best in my field is something am working hard to achieve.
+                            Coding is something I love very much it creates avenue for critical thinking, exploration and problem solving.
+                            The first language I learnt was HTML, then CSS before Javascript which I dedicated my 1 year to study at&nbsp;
+                             <Link href={"https://javascript.info/"} target={"_blank"}>Javascript.info</Link>,
+                             &nbsp;<Link href={"https://www.youtube.com/@freecodecamp"} target={"_blank"}>Youtube(FreecodeCamp)</Link>&nbsp;
+                            and other sources that are great place for learning. During my journey as a developer I have trained some wonderful
+                            persons on React and Basic programming (CSS3, HTML5 and Javascript).
+                            <br/>
+                            <br/>
+                            Talking about my journey as a graphics designer,
+                            I am very proficient with the use of Adobe products like Photoshop, Illustrator, XD, etc. I equally make use
+                            of CorelDraw for designing, I have been designing and training students for the past 7 years, I have taught over&nbsp;
+                            <b>50 STUDENTS</b> during my journey as a Graphics designer and UI/UX designer.
+                            The skills that I have accumulated as one who is willing to study to the highest level,
+                            is something I can't write home about and am very proud of it. I love exploring new things especially in
+                            the aspect of web. Some of the skills and knowledge I accumulated are as follows:&nbsp;
+                            <b>
+                                HTML5, CSS3, JavaScript, TypeScript, React, NextJS, Django, REST API, NodeJS, Express, MUI, MUI-JOY, Angular, Svelte,
+                                Photoshop, Illustrator, XD, Figma, CorelDraw, etc.
+                            </b>
                         </Typography>
                     </Grid>
                 </Grid>

@@ -6,19 +6,25 @@ export default function Loading(){
     return(
             <Paper elevation={0} sx={{
                 borderRadius: 0,
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "100vw",
-                height: "90vh",
-                position: "relative"
+                position: "fixed",
+                zIndex: 2000,
+                top: 0
             }}>
                 <Box sx={{
-                    position: "absolute",
-                    zIndex: 1,
-                }}><img src={logo} alt={"website logo"} width={50}/></Box>
-                <CircularProgress color={"primary"} size={80} thickness={1} sx={{opacity: .9}}/>
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    width: "100vw",
+                    height: "100vh",
+                    position: "relative"
+                }}>
+                    <Box sx={{
+                        position: "absolute",
+                        zIndex: 1,
+                    }}><img src={logo} alt={"website logo"} width={60}/></Box>
+                    <CircularProgress color={"primary"} size={80} thickness={1} sx={{opacity: .9}}/>
+                </Box>
             </Paper>
     );
 }

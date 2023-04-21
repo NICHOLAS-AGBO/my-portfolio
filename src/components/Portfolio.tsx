@@ -10,10 +10,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 export default function Portfolio(){
+
     useEffect(()=>{
 
-        const projects = document.querySelectorAll(".projects");
-        const media = gsap.matchMedia();
         const tl = gsap.timeline({
             defaults:{
                 delay: 0.05,
@@ -23,17 +22,18 @@ export default function Portfolio(){
                 start: "-=200px top",
             }
         });
+        const projects = document.querySelectorAll(".projects");
+        const media = gsap.matchMedia();
 
         projects.forEach(sk=>{
-            media
-                .add("(max-width: 899px)", ()=>{
+            media.add("(max-width: 899px)", ()=>{
                 tl.fromTo(sk,
                     { autoAlpha: 0, y: 200 },
                     {autoAlpha: 1, y: 0, delay: 0.15 })})
                 .add("(min-width: 900px)",()=>{
                     tl.fromTo(sk,{ autoAlpha: 0 },
                         { y: 0, autoAlpha: 1 })})
-        })
+        });
 
     });
 
@@ -60,6 +60,7 @@ export default function Portfolio(){
                     <Grid xs={12} md={6} className={"projects"} sx={{
                         aspectRatio: "16 / 9",
                         filter: "grayscale(50%)",
+                        visibility: "hidden",
                         "&:hover":{
                             filter: "grayscale(0%)"
                         }
@@ -113,6 +114,7 @@ export default function Portfolio(){
                     <Grid xs={12} md={6} className={"projects"} sx={{
                         aspectRatio: "16 / 9",
                         filter: "grayscale(50%)",
+                        visibility: "hidden",
                         "&:hover":{
                             filter: "grayscale(0%)"
                         }
@@ -166,6 +168,7 @@ export default function Portfolio(){
                     <Grid xs={12} md={6} className={"projects"} sx={{
                         aspectRatio: "16 / 9",
                         filter: "grayscale(50%)",
+                        visibility: "hidden",
                         "&:hover":{
                             filter: "grayscale(0%)"
                         }

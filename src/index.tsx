@@ -1,16 +1,12 @@
 import React, {FC, ReactNode} from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import './App.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 // import reportWebVitals from './reportWebVitals';
 import Footer from "./components/Footer";
 import {BrowserRouter as Router, Routes, Route, Outlet} from "react-router-dom";
-import About from "./routes/about";
 import Notfound from "./routes/404";
 import Header from "./components/Header";
-import MyPortfolio from "./routes/myportfolio";
-import Contact from "./routes/contact";
 import useTheme from "./hooks/useTheme";
 
 const Theme:FC<{children: ReactNode}> = ({children})=>{
@@ -22,13 +18,18 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+const App = React.lazy(()=>import('./App'));
+const Contact = React.lazy(()=>import('./routes/contact'));
+const About = React.lazy(()=>import('./routes/about'));
+const MyPortfolio = React.lazy(()=>import('./routes/myportfolio'));
+
 root.render(
   <React.StrictMode>
       <Router>
           <Theme>
               <Header/>
               <Routes>
-                  <Route path={"/"} element={<App/>}/>
+                  <Route path={"/"} element={<App/>} index/>
                   <Route path={"home"} element={<App/>}/>
                   <Route path={"about-me"} element={<About/>}/>
                   <Route path={"portfolio"} element={<MyPortfolio/>}/>
