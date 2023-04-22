@@ -13,7 +13,7 @@ import {
     Unstable_Grid2 as Grid
 } from "@mui/material";
 import me from "../img/pic.png";
-import {Close, Email, Facebook, GitHub, LinkedIn, Twitter} from "@mui/icons-material";
+import {ArrowBack, Close, Email, Facebook, GitHub, LinkedIn, Twitter} from "@mui/icons-material";
 import { useForm, ValidationError } from '@formspree/react';
 import * as Toast from '@radix-ui/react-toast';
 import Loading from "../components/FullLoading";
@@ -196,11 +196,12 @@ export default function Contact(){
             <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <meta name={"author"} content={"NICHOLAS AGBO"} />
-            <meta name={"description"} content={"Visit my social media handles or contact me"} />
+            <meta name={"description"} content={"Visit my social media handles or contact me for your company projects"} />
             <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
             <title>NICHOLAS AGBO | Contact me</title>
         </Helmet>
-<Container maxWidth={"sm"} sx={{py: 4,}}>
+<Container maxWidth={"sm"} sx={{py: 6,}}>
+    <Button variant={"text"} onClick={()=>window.history.back()} sx={{mb: 2, display:{xs: "flex", sm: "none"}}} startIcon={<ArrowBack color={"inherit"}/>}>Back</Button>
     <Stack direction={"row"} draggable={true} sx={{
         flexWrap: "nowrap",
         justifyContent: "center",

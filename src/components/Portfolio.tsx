@@ -6,8 +6,8 @@ import {ArrowOutward} from "@mui/icons-material";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 import {useEffect} from "react";
-gsap.registerPlugin(ScrollTrigger);
 
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Portfolio(){
 
@@ -34,7 +34,9 @@ export default function Portfolio(){
                     tl.fromTo(sk,{ autoAlpha: 0 },
                         { y: 0, autoAlpha: 1 })})
         });
+        ScrollTrigger.refresh();
 
+        return()=>media.revert();
     });
 
     return(

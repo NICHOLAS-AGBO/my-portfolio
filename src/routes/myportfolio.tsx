@@ -1,10 +1,11 @@
-import {Container, Unstable_Grid2 as Grid} from "@mui/material";
+import {Button, Container, Unstable_Grid2 as Grid} from "@mui/material";
 // @ts-ignore
 import {Helmet} from "react-helmet";
 
 import React from "react";
 import Loading from "./components/LPortfolio";
 import {FullLoading} from "../components/FullLoading";
+import {ArrowBack} from "@mui/icons-material";
 
 const Portfolio = React.lazy(()=>import("./components/Portfolio"));
 
@@ -19,7 +20,8 @@ function PortfolioContents(){
                 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
                 <title>NICHOLAS AGBO | My project portfolio</title>
             </Helmet>
-        <Container maxWidth={false} sx={{py: 5}}>
+        <Container maxWidth={"lg"} sx={{py: 6}}>
+            <Button variant={"text"} onClick={()=>window.history.back()} sx={{mb: 2, display:{xs: "flex", sm: "none"}}} startIcon={<ArrowBack color={"inherit"}/>}>Back</Button>
             <Grid container
                   direction={"column"}
                   justifyContent={"center"}

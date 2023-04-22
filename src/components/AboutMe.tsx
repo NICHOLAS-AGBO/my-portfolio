@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import Nicholas from "../img/pic.png";
 import {ExpandMore} from "@mui/icons-material";
+import {WEB_EXPERIENCE_YEAR} from "../dateExp";
 
 const Section = styled(Box)(({theme})=>({
     boxShadow: "none",
@@ -34,7 +35,6 @@ export default function AboutMe(){
     return(
         <Container sx={{
             minHeight: "600px",
-            height: "max-content",
         }} maxWidth={"sm"}>
             <Section>
                 <Avatar src={Nicholas} alt={"nicholas-agbo"}
@@ -56,8 +56,8 @@ export default function AboutMe(){
             <Typography variant={"body1"}
                         component={"p"}
                         sx={{textAlign: "center"}}>
-                Fullstack web developer with 6years experience in Web Development.
-                <br/> I specialise mostly in React, Next.js, Django, Web3.
+                Fullstack web developer with {WEB_EXPERIENCE_YEAR} years experience in Web Development.
+                Specialised mostly in React, Next.js, Django, Web3.
             </Typography>
     </Grid>
 

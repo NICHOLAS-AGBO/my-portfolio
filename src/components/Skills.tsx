@@ -6,7 +6,7 @@ import {useEffect} from "react";
 //DEVELOPER
 import NextJs from "../img/skills/800px-Nextjs-logo.svg.png"
 import NextJsW from "../img/skills/nextjs-logo.png"
-import ReactJs from "../logo.svg"
+import ReactJs from "../img/skills/react.svg"
 import TSC from "../img/skills/10b88c68-typescript-logo-1024x576.png"
 import Js from "../img/skills/JavaScript-logo.png"
 import ExpressJs from "../img/skills/Expressjs.png"
