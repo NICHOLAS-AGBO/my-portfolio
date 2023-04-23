@@ -59,11 +59,10 @@ export default function Footer(){
     </Grid>
     <Grid sx={{px: 1}}>
         <Grid container wrap={"nowrap"}>
-            <Grid><Link href={"#"} underline={"none"}><IconButton sx={{color: "common.white"}}><GitHub/></IconButton></Link></Grid>
-            <Grid><Link href={"#"} underline={"none"}><IconButton sx={{color: "common.white"}}><LinkedIn/></IconButton></Link></Grid>
-            <Grid><Link href={"#"} underline={"none"}><IconButton sx={{color: "common.white"}}><Twitter/></IconButton></Link></Grid>
-            <Grid><Link href={"#"} underline={"none"}><IconButton sx={{color: "common.white"}}><Facebook/></IconButton></Link></Grid>
-            <Grid><Link href={"#"} underline={"none"}><IconButton sx={{color: "common.white"}}><Pinterest/></IconButton></Link></Grid>
+            <Grid><Link href={"https://github.com/NICHOLAS-AGBO"} underline={"none"}><IconButton sx={{color: "common.white"}}><GitHub/></IconButton></Link></Grid>
+            <Grid><Link href={"https://www.linkedin.com/in/nicholas-agbo-9a380b202/"} underline={"none"}><IconButton sx={{color: "common.white"}}><LinkedIn/></IconButton></Link></Grid>
+            <Grid><Link href={"https://twitter.com/AgboNicholas1?fbclid=IwAR1QG--PNYqvWpAooAdfeOEVujoa25KrqVAIK3NaGsT6dJ_Cs_I72NnLSsY"} underline={"none"}><IconButton sx={{color: "common.white"}}><Twitter/></IconButton></Link></Grid>
+            <Grid><Link href={"https://www.facebook.com/michael.agbo.1650"} underline={"none"}><IconButton sx={{color: "common.white"}}><Facebook/></IconButton></Link></Grid>
         </Grid>
     </Grid>
     <Grid>

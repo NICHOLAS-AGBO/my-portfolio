@@ -3,7 +3,7 @@ import portfolio1 from "../img/portfolio/p1.png";
 import portfolio2 from "../img/portfolio/p2.png";
 import portfolio3 from "../img/portfolio/p3.png";
 import {ArrowOutward} from "@mui/icons-material";
-import gsap from "gsap";
+import gsap from "gsap/dist/gsap";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 import {useEffect} from "react";
 

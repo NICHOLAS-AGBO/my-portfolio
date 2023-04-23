@@ -8,8 +8,6 @@ export default function Notfound(){
     const Link = styled(NavLink)(({theme})=>({
         color: theme.palette.primary.main
     }));
-    const {mode} = useTheme();
-
     return(
         <Grid container
               sx={{width: "100vw", minHeight: "90vh", textAlign: "center"}}

@@ -1,5 +1,6 @@
 import {Avatar, Button, Container, Link, Typography, Unstable_Grid2 as Grid} from "@mui/material";
-import Nicholas from "../img/pic.png";
+import me from "../img/pic.png";
+import me_large from "../img/pic_large.png";
 import Loading from "../components/FullLoading";
 import React from "react";
 import {GRAPHICS_EXPERIENCE_YEAR, WEB_EXPERIENCE_YEAR} from "../dateExp";
@@ -8,16 +9,17 @@ import {ArrowBack} from "@mui/icons-material";
 export default function About(){
     return(
         <React.Suspense fallback={<Loading/>}>
-            <Container maxWidth={"md"} sx={{py: 6}}>
-                <Button variant={"text"} onClick={()=>window.history.back()} sx={{mb: 2, display:{xs: "flex", sm: "none"}}} startIcon={<ArrowBack color={"inherit"}/>}>Back</Button>
+            <Container maxWidth={"lg"} sx={{py: 6,}}>
+                <Button variant={"text"} onClick={()=>window.history.back()}
+                        sx={{mb: 2, display:{xs: "flex", sm: "none"}}} startIcon={<ArrowBack color={"inherit"}/>}>Back</Button>
                 <Grid container
                       justifyContent={"center"}
-                      alignItems={"center"}
-                      direction={"column"}
-                      rowSpacing={3}
+                      alignItems={{xs: "center", lg: "end"}}
+                      flexDirection={{xs: "column", lg: "row"}}
+                      spacing={{xs: 3, lg: 2}}
                 >
-                    <Grid>
-                        <Avatar src={Nicholas}
+                    <Grid sx={{display:{lg: "none"}}}>
+                        <Avatar src={me}
                                 alt={"nicholas-agbo"}
                                 sx={{
                                     mx: "auto",
@@ -34,14 +36,31 @@ export default function About(){
                                 }}
                         />
                     </Grid>
-                    <Grid sx={{textAlign: "center"}}>
+                    <Grid sx={{textAlign: "center", display:{lg: "none"}}}>
                         <Typography variant={"h1"} fontWeight={900} align={"center"}
                                     sx={{fontSize: {xs: "h4.fontSize", md: "h3.fontSize"}}}>NICHOLAS AGBO</Typography>
                         <Typography variant={"body2"} sx={{color: "gray",}}>
                             Web Developer, UI/UX designer, Graphics designer/Tutor
                         </Typography>
                     </Grid>
-                    <Grid>
+
+                    {/*Image for large screen*/}
+                    <Grid lg={3} sx={{display:{xs: "none", lg: "block"}, position: "sticky", bottom: 0, left: 0, zIndex: 2}}>
+                        <Grid container direction={"column"} rowSpacing={2}>
+                            <Grid>
+                                <Typography variant={"h1"} fontWeight={900}
+                                            sx={{fontSize:  "h4.fontSize"}}>NICHOLAS AGBO</Typography>
+                                <Typography variant={"body2"} sx={{color: "gray",}}>
+                                    Web Developer, UI/UX designer, Graphics designer/Tutor
+                                </Typography>
+                            </Grid>
+                            <Grid>
+                                <img src={me_large} alt={"nicholas"}/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid lg={8} sx={{pt: {lg: 3}}}>
                         <Typography>
                             <b>NICHOLAS AGBO</b> is a proud Nigerian based in Enugu State,
                             I am a fullstack developer with {WEB_EXPERIENCE_YEAR} years of experience, and a visual designer with {GRAPHICS_EXPERIENCE_YEAR} years of experience.

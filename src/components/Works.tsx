@@ -1,4 +1,5 @@
 import {Divider, Typography, Unstable_Grid2 as Grid} from "@mui/material";
+import {GRAPHICS_EXPERIENCE_YEAR} from "../dateExp";
 
 export default function Works(){
     return(
@@ -74,7 +75,7 @@ export default function Works(){
                    <Grid xs={12} md={9} sx={{px: 2}}>
                        <Typography component={"p"} sx={{color: "primary.main"}}>
                            As a graphics designer and a tutor, I have spent most of my time teaching and designing
-                           for companies. I have 8years experience as a graphics designer and I have trained about
+                           for companies. I have {GRAPHICS_EXPERIENCE_YEAR} years experience as a graphics designer and I have trained about
                            50 students when I started teaching.
                        </Typography>
                    </Grid>
