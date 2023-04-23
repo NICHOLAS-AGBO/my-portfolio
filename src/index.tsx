@@ -5,7 +5,7 @@ import './App.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 // import reportWebVitals from './reportWebVitals';
 import Footer from "./components/Footer";
-import {BrowserRouter as Router, Routes, Route, Outlet} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import About from "./routes/about";
 import Notfound from "./routes/404";
 import Header from "./components/Header";
@@ -28,14 +28,13 @@ root.render(
           <Theme>
               <Header/>
               <Routes>
-                  <Route path={"/"} element={<App/>} index/>
+                  <Route path={"/"} element={<App/>}/>
                   <Route path={"home"} element={<App/>}/>
                   <Route path={"about-me"} element={<About/>}/>
                   <Route path={"portfolio"} element={<MyPortfolio/>}/>
                   <Route path={"contact"} element={<Contact/>}/>
                   <Route path={"*"} element={<Notfound/>}/>
               </Routes>
-              <Outlet/>
               <Footer/>
           </Theme>
       </Router>

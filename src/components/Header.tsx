@@ -4,7 +4,7 @@ import {
     IconButton,
     styled, Switch,
     Toolbar, Tooltip,
-    Grid
+    Grid, Slide
 } from "@mui/material";
 import {Menu, MenuOpen} from "@mui/icons-material";
 import {NavLink} from "react-router-dom";
@@ -79,6 +79,7 @@ const ThemeSwitch = styled(Switch)(({ theme }) => ({
     },
 }));
 
+
 export default function Header(){
     const [menu, setMenu] = useState(false);
     const {changeTheme, mode} = useTheme();
@@ -107,10 +108,11 @@ export default function Header(){
     }))
 
 
-    //for closing menu when viewport resizes
+
     useEffect(() => {
         window.addEventListener("resize",()=>setMenu(false));
     });
+
 
     return(
         <NavBar variant={"outlined"}
@@ -127,7 +129,7 @@ export default function Header(){
                         </IconButton>
                         <Logo to={"/"} sx={{order: {xs: 2, sm: 0}}}
                               onClick={()=>setMenu(false)}>
-                            <img src={mode==="dark"?light_logo:dark_logo} alt={"nicholas_agbo logo"} width={45}/>
+                            <img src={mode==="dark"?light_logo:dark_logo} alt={"nicholas_agbo logo"} width={40}/>
                         </Logo>
                         <Box component={"nav"} sx={{
                             flexGrow: 1,
@@ -153,14 +155,14 @@ export default function Header(){
                     </Toolbar>
 
                     {/*FOR SMALL SCREEN*/}
-                    {
-                        menu &&
                         <Collapse in={menu}
                                   timeout={"auto"}
+                                  easing={"ease"}
                                   component={"nav"}
                                   sx={{
                                       width: "100%",
                                   }}>
+                            <Slide direction={"right"} in={menu}>
                             <Flex container
                                   spacing={1}
                                   direction={"column"}>
@@ -174,8 +176,8 @@ export default function Header(){
                                     ))
                                 }
                             </Flex>
+                            </Slide>
                         </Collapse>
-                    }
 
                 </NavBar>
     );
