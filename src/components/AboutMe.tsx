@@ -38,7 +38,7 @@ export default function AboutMe(){
         }} maxWidth={"sm"}>
             <Section>
                 <Avatar src={Nicholas} alt={"nicholas-agbo"}
-                        sx={{width: 200, height: 200}}/>
+                        sx={{mx: "auto", width: {xs: 170, md: 200}, height: {xs: 170, md: 200}}}/>
 <Grid container
       direction={"column"}
       justifyContent={"center"}

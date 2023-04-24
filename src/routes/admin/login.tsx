@@ -24,7 +24,7 @@ export function Component() {
             <Paper sx={{p: 3}}>
                 <Stack justifyContent={"center"} spacing={3}>
                     <Box mx={"auto"}><img src={logo} alt={"nicholas_agbo_logo"} width={55}/></Box>
-                    <Divider><Typography variant={"h4"}>Sign into admin</Typography></Divider>
+                    <Divider><Typography variant={"subtitle1"}>Sign into admin</Typography></Divider>
                     <Form method={"post"}>
                         <FormControl fullWidth variant={"filled"} sx={{rowGap: 3, flexGrow: 0}}>
                             <TextField id={"email"} label={"Email address"} name={"email"} type={"email"} placeholder={"abcd@email.com"}/>
