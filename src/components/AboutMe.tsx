@@ -19,7 +19,7 @@ const Section = styled(Box)(({theme})=>({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    rowGap: theme.spacing(4),
+    rowGap: theme.spacing(5),
     minHeight: "inherit",
     height: "inherit"
 }));
@@ -34,7 +34,7 @@ export default function AboutMe(){
 
     return(
         <Container sx={{
-            minHeight: "600px",
+            minHeight: "100vh",
         }} maxWidth={"sm"}>
             <Section>
                 <Avatar src={Nicholas} alt={"nicholas-agbo"}
