@@ -19,7 +19,7 @@ const Section = styled(Box)(({theme})=>({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    rowGap: theme.spacing(5),
+    rowGap: theme.spacing(4),
     minHeight: "inherit",
     height: "inherit"
 }));
@@ -38,7 +38,7 @@ export default function AboutMe(){
         }} maxWidth={"sm"}>
             <Section>
                 <Avatar src={Nicholas} alt={"nicholas-agbo"}
-                        sx={{mx: "auto", width: {xs: 150, md: 200}, height: {xs: 150, md: 200}}}/>
+                        sx={{width: 200, height: 200}}/>
 <Grid container
       direction={"column"}
       justifyContent={"center"}
