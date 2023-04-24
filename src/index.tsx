@@ -22,27 +22,44 @@ const root = ReactDOM.createRoot(
 
 const routes = createBrowserRouter(
     createRoutesFromElements(
-        <Route element={
-            <React.Suspense fallback={<Loading/>}>
-            <Header/>
-                <Outlet/>
-                <ScrollRestoration getKey={(location)=> location.state}/>
-            <Footer/>
-            </React.Suspense>
-        }>
-        <Route path={"/"} Component={App}/>
-        <Route path={"home"} lazy={()=>import('./App')}/>
-        <Route path={"about-me"} lazy={()=>import('./routes/about')}/>
-        <Route path={"portfolio"} lazy={()=>import('./routes/myportfolio')}/>
-        <Route path={"contact"} lazy={()=>import('./routes/contact')}/>
-        <Route path={"*"} lazy={()=>import('./routes/404')}/>
-        </Route>
+        <>
+
+            <Route element={
+                    <React.Suspense fallback={<Loading/>}>
+                        <Header/>
+                        <Outlet/>
+                        <ScrollRestoration getKey={(location)=> location.state}/>
+                        <Footer/>
+                    </React.Suspense>
+            }>
+                <Route path={"/"} Component={App}/>
+                <Route path={"home"} lazy={()=>import('./App')}/>
+                <Route path={"about-me"} lazy={()=>import('./routes/about')}/>
+                <Route path={"portfolio"} lazy={()=>import('./routes/myportfolio')}/>
+                <Route path={"contact"} lazy={()=>import('./routes/contact')}/>
+                <Route path={"*"} lazy={()=>import('./routes/404')}/>
+            </Route>
+
+            <Route element={
+                    <React.Suspense fallback={<Loading/>}>
+                        <Outlet/>
+                        <ScrollRestoration getKey={(location)=> location.state}/>
+                    </React.Suspense>
+            }>
+                <Route path={"admin/login"} lazy={()=>import('./routes/admin/login')}/>
+                <Route path={"admin/dashboard"} lazy={()=>import('./routes/myportfolio')}/>
+            </Route>
+
+
+        </>
     )
 );
 
 root.render(
   <React.StrictMode>
-          <Theme><Router router={routes} fallbackElement={<Loading/>}/></Theme>
+      <Theme>
+          <Router router={routes} fallbackElement={<Loading/>}/>
+      </Theme>
   </React.StrictMode>
 );
 

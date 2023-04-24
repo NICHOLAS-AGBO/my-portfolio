@@ -150,7 +150,7 @@ export default function Header(){
                         </Box>
                         <ThemeSwitch sx={{order: {xs: 3, sm: 0}}}
                             checked={mode==="dark"}
-                            onClick={changeTheme}
+                            onClick={()=>changeTheme()}
                         />
                     </Toolbar>
 

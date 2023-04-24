@@ -25,8 +25,9 @@ const darkTheme:ThemeOptions = {
 };
 const mode = window.localStorage.mode;
 
+type contextProps = {Theme: ThemeOptions, toggleTheme: (deviceMode?:"system")=> void, mode: PaletteMode|undefined};
 
-export const ThemeContext = createContext<{Theme: ThemeOptions, toggleTheme: ()=> void, mode: PaletteMode|undefined }>({
+export const ThemeContext = createContext<contextProps>({
     Theme: lightTheme,
     toggleTheme: ()=>{},
     mode: "light"
@@ -38,16 +39,22 @@ const UI:FC<{children: ReactNode}> = ({children})=>{
     const [theme, setTheme] = useState(lightTheme);
 
     //theme change function
-    const changeTheme = useCallback(()=> {
-        if (theme.palette!.mode === "dark") {
-            setTheme(lightTheme);
-            window.localStorage.setItem("mode","light");
+    const changeTheme = useCallback((deviceMode?:"system")=> {
+        if (deviceMode==="system"){
+            if (systemMode&&muiMedia) setTheme(darkTheme);
+            else setTheme(lightTheme);
+            window.localStorage.theme=null;
+        }else {
+            if (theme.palette!.mode === "dark") {
+                setTheme(lightTheme);
+                window.localStorage.setItem("mode","light");
+            }
+            if (theme.palette!.mode === "light") {
+                setTheme(darkTheme);
+                window.localStorage.setItem("mode","dark");
+            }
         }
-        if (theme.palette!.mode === "light") {
-            setTheme(darkTheme);
-            window.localStorage.setItem("mode","dark");
-        }
-    },[theme]);
+    },[theme, systemMode, muiMedia]);
 
     //for controlling active theme on refresh
     useEffect(()=>{
