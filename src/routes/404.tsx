@@ -15,7 +15,7 @@ export function Component(){
               direction={"column"}
         >
             <img src={me} alt={"nicholas_agbo logo"} width={100}/>
-            <Typography color={"primary"} sx={{fontSize: {xs: "h3.fontSize", sm: "h2.fonSize"}}} fontWeight={900}>
+            <Typography color={"primary"} sx={{fontSize: {xs: "h4.fontSize", sm: "h2.fonSize"}}} fontWeight={900}>
                 Page not found
             </Typography>
             <Typography component={"span"}>
