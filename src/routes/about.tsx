@@ -6,9 +6,8 @@ import React from "react";
 import {GRAPHICS_EXPERIENCE_YEAR, WEB_EXPERIENCE_YEAR} from "../dateExp";
 import {ArrowBack} from "@mui/icons-material";
 
-export default function About(){
+export function Component(){
     return(
-        <React.Suspense fallback={<Loading/>}>
             <Container maxWidth={"lg"} sx={{py: 6,}}>
                 <Button variant={"text"} onClick={()=>window.history.back()}
                         sx={{mb: 2, display:{xs: "flex", sm: "none"}}} startIcon={<ArrowBack color={"inherit"}/>}>Back</Button>
@@ -95,6 +94,7 @@ export default function About(){
                     </Grid>
                 </Grid>
             </Container>
-        </React.Suspense>
     );
 }
+
+Component.displayName = "About";

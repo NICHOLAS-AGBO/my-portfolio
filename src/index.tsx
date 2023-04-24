@@ -1,17 +1,15 @@
 import React, {FC, ReactNode} from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import './App.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 // import reportWebVitals from './reportWebVitals';
 import Footer from "./components/Footer";
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import About from "./routes/about";
-import Notfound from "./routes/404";
+import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider as Router, Outlet, ScrollRestoration} from "react-router-dom";
 import Header from "./components/Header";
-import MyPortfolio from "./routes/myportfolio";
-import Contact from "./routes/contact";
 import useTheme from "./hooks/useTheme";
+import Loading from "./components/FullLoading";
+import {Component as App} from "./App";
+
 
 const Theme:FC<{children: ReactNode}> = ({children})=>{
     const {UI} = useTheme()
@@ -22,22 +20,29 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+const routes = createBrowserRouter(
+    createRoutesFromElements(
+        <Route element={
+            <React.Suspense fallback={<Loading/>}>
+            <Header/>
+                <Outlet/>
+                <ScrollRestoration getKey={(location)=> location.state}/>
+            <Footer/>
+            </React.Suspense>
+        }>
+        <Route path={"/"} Component={App}/>
+        <Route path={"home"} lazy={()=>import('./App')}/>
+        <Route path={"about-me"} lazy={()=>import('./routes/about')}/>
+        <Route path={"portfolio"} lazy={()=>import('./routes/myportfolio')}/>
+        <Route path={"contact"} lazy={()=>import('./routes/contact')}/>
+        <Route path={"*"} lazy={()=>import('./routes/404')}/>
+        </Route>
+    )
+);
+
 root.render(
   <React.StrictMode>
-      <Router>
-          <Theme>
-              <Header/>
-              <Routes>
-                  <Route path={"/"} element={<App/>}/>
-                  <Route path={"home"} element={<App/>}/>
-                  <Route path={"about-me"} element={<About/>}/>
-                  <Route path={"portfolio"} element={<MyPortfolio/>}/>
-                  <Route path={"contact"} element={<Contact/>}/>
-                  <Route path={"*"} element={<Notfound/>}/>
-              </Routes>
-              <Footer/>
-          </Theme>
-      </Router>
+          <Theme><Router router={routes} fallbackElement={<Loading/>}/></Theme>
   </React.StrictMode>
 );
 

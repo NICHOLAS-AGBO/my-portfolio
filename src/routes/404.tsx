@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 import me from "../img/pic.png";
 
 
-export default function Notfound(){
+export function Component(){
     const Link = styled(NavLink)(({theme})=>({
         color: theme.palette.primary.main
     }));
@@ -23,7 +23,7 @@ export default function Notfound(){
             </Typography>
 
         </Grid>
-
     );
 
 }
+Component.displayName = "NotFound";

@@ -188,17 +188,17 @@ function ContactForm() {
 }
 
 
-export default function Contact(){
-    return(<React.Suspense fallback={<Loading/>}>
-        <Helmet>
-            <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-            <meta name={"author"} content={"NICHOLAS AGBO"} />
-            <meta name={"description"} content={"Visit my social media handles or contact me for your company projects"} />
-            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-            <title>NICHOLAS AGBO | Contact me</title>
-        </Helmet>
+export function Component(){
+    return(
 <Container maxWidth={"sm"} sx={{py: 6,}}>
+    <Helmet>
+        <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name={"author"} content={"NICHOLAS AGBO"} />
+        <meta name={"description"} content={"Visit my social media handles or contact me for your company projects"} />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <title>NICHOLAS AGBO | Contact me</title>
+    </Helmet>
     <Button variant={"text"} onClick={()=>window.history.back()} sx={{mb: 2, display:{xs: "flex", sm: "none"}}} startIcon={<ArrowBack color={"inherit"}/>}>Back</Button>
     <Stack direction={"row"} draggable={true} sx={{
         flexWrap: "nowrap",
@@ -306,5 +306,7 @@ export default function Contact(){
     {/*    section form*/}
 <ContactForm/>
 </Container>
-    </React.Suspense>)
+    )
 }
+
+Component.displayName = "Contact";

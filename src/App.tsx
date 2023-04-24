@@ -7,7 +7,8 @@ import {WEB_EXPERIENCE_YEAR} from "./dateExp";
 
 const AboutMe = React.lazy(()=>import("./components/AboutMe"));
 const Main = React.lazy(()=>import("./components/Main"));
-function App() {
+
+export function Component() {
   return (
       <>
           <Helmet>
@@ -20,13 +21,11 @@ function App() {
               <meta name={"author"} content={"NICHOLAS AGBO"}/>
               <title>NICHOLAS AGBO | Web Developer</title>
           </Helmet>
-          <React.Suspense fallback={<Loading/>}>
               <AboutMe/>
               <Main/>
-          </React.Suspense>
-
       </>
   );
 }
+Component.displayName = "Home";
 
-export default App;
+

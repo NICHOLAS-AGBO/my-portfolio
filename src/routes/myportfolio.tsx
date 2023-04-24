@@ -39,10 +39,12 @@ function PortfolioContents(){
 }
 
 
-export default function MyPortfolio(){
+export function Component(){
     return(
 <React.Suspense fallback={<FullLoading/>}>
     <PortfolioContents/>
 </React.Suspense>
     );
 }
+
+Component.displayName = "MyPortfolio";
