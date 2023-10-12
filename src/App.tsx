@@ -1,7 +1,6 @@
 import React from 'react';
 // @ts-ignore
 import {Helmet} from "react-helmet";
-import Loading from "./components/FullLoading";
 import {WEB_EXPERIENCE_YEAR} from "./dateExp";
 
 

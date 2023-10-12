@@ -56,8 +56,8 @@ export default function AboutMe(){
             <Typography variant={"body1"}
                         component={"p"}
                         sx={{textAlign: "center"}}>
-                Fullstack web developer with {WEB_EXPERIENCE_YEAR} years experience in Web Development.
-                Specialised mostly in React, Next.js, Django, Web3.
+                Fullstack developer with {WEB_EXPERIENCE_YEAR} years experience in Web development.
+                    Specialised mostly NextJS, React, Typescript, ECMAScript, SASS, Tailwind, Web3.
             </Typography>
     </Grid>
 
