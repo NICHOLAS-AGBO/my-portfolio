@@ -57,7 +57,7 @@ export default function AboutMe(){
                         component={"p"}
                         sx={{textAlign: "center"}}>
                 Fullstack developer with {WEB_EXPERIENCE_YEAR} years experience in Web development.
-                    Specialised mostly NextJS, React, Typescript, ECMAScript, SASS, Tailwind, Web3.
+                    Specialised mostly in NextJS, React, Typescript, ECMAScript, SASS, Tailwind, Web3.
             </Typography>
     </Grid>
 
